@@ -27,7 +27,7 @@ type Locale = "ar" | "en"; // Add more locales if needed
 export const metadata: Metadata = {
   title: "المركز الإعلامي الاستراتيجي",
   description:
-    "الركز الوحيد التخصص في تخطيط وإدارة العمل العلمي على أسس استراتيجية، تضمن الوصول إلى الجمهور وتحقيق الهداف العليا."
+    "المركز الوحيد التخصص في تخطيط وإدارة العمل العلمي على أسس استراتيجية، تضمن الوصول إلى الجمهور وتحقيق الهداف العليا."
 };
 
 export default async function LocaleLayout({

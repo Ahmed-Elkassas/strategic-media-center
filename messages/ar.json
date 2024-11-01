@@ -1,0 +1,92 @@
+{
+    "common": {
+        "links": {
+            "home": "الرئيسية",
+            "aboutus": "التعريف",
+            "philosophy": "فلسفة المركز",
+            "consulting": "الإستشارات",
+            "training": "التدريب",
+            "lectures": "المحاضرات",
+            "studies": "الدراسات",
+            "seminars": "الندوات",
+            "opinionPolls": "قياس الرأي",
+            "forums": "منتديات الحوار",
+            "news": "أخبار المركز"
+        },
+        "footer": {
+            "subscribe": "الاشتراك في خدمات المركز",
+            "signup": "تسجيل مستخدم جديد",
+            "login": "تسجيل الدخول للموقع",
+            "centerServiceAgreement": "اتفاقية الاشتراك في خدمات المركز",
+            "serviceAgreement": "اتفاقية الخدمة",
+            "privacyPolicy": "سياسة الخصوصية",
+            "contact": "اتصال",
+            "copyright": "جميع الحقوق محفوظة لمركز الإعلام الإستراتيجي 2025"
+        }
+    },
+    "auth": {
+        "login": {
+            "sidebarTitle": "مرحبا، نحن هنا لمساعدتك في:",
+            "sidebarContent": {
+                "plan": {
+                    "main": "تخطيط مشروعك الإعلامية",
+                    "sub": "وإدارتها علي أسس استراتيجية."
+                },
+                "define": {
+                    "main": "تحديد الأهداف العليا وضمان إنتاج",
+                    "sub": "المحتوي الإعلامي الذي يحققها."
+                },
+                "enhance": {
+                    "main": "تعزیز القدرات التنافسیة والوصول",
+                    "sub": "إلى الجمھور المستھدف"
+                },
+                "Understand": {
+                    "main": "فھم الجمھور ومیولھ وبيئته",
+                    "sub": "واحتیاجاته، وكیفیة الوصول إليه"
+                },
+                "influence": {
+                    "main": "التأثیر في الجمھور، وزیادة القدرة",
+                    "sub": "على التغییر"
+                },
+                "develop": {
+                    "main": "تطویر الإمكانیات الإنتاجیة",
+                    "sub": "وسیاساتھا وضبط الإنفاق"
+                },
+                "strategicDirection": {
+                    "main": "تعزیز التوجھ الاستراتیجي في",
+                    "sub": "تعزیز التوجھ الاستراتیجي في"
+                }
+            },
+            "emailLabel": "الإيميل",
+            "emailRequired": "رجاءً أدخل البريد الإلكتروني",
+            "passwordLabel": "كلمة المرور",
+            "passwordRequired": "رجاءً أدخل كلمة المرور",
+            "submit": "تسجيل الدخول للموقع",
+            "newSubscriber": "مشترك جديد",
+            "newUser": "مستخدم جديد"
+        },
+        "signup": {
+            "title": "Create a New Account",
+            "name": "Full Name",
+            "email": "Email"
+        }
+    },
+    "home": {
+        "title": "Welcome to Our Site",
+        "intro": "We specialize in strategic media planning."
+    },
+    "aboutus": {
+        "title": "About Us",
+        "description": "We specialize in strategic media planning."
+    },
+    "contact": {
+        "title": "Contact Us",
+        "description": "Feel free to reach out to us anytime."
+    },
+    "consulting": {
+        "heroText": {
+            "main": "معكم، نحو تهديف أدق، يقودكم إلي التميز والتفوق والريادة",
+            "sub": "ويضمن لكم الوصول إلي الجمهور المستهدف والتأثير فيه."
+        }
+    }
+}

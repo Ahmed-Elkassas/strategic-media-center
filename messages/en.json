@@ -1,0 +1,92 @@
+{
+    "common": {
+        "links": {
+            "home": "Home",
+            "aboutus": "About Us",
+            "philosophy": "Center Philosophy",
+            "consulting": "Consulting",
+            "training": "Training",
+            "lectures": "Lectures",
+            "studies": "Studies",
+            "seminars": "Seminars",
+            "opinionPolls": "Opinion Polls",
+            "forums": "Discussion Forums",
+            "news": "Center News"
+        },
+        "footer": {
+            "subscribe": "Subscribe to Center Services",
+            "signup": "New User Registration",
+            "login": "Site Login",
+            "centerServiceAgreement": "Service Subscription Agreement",
+            "serviceAgreement": "Service Agreement",
+            "privacyPolicy": "Privacy Policy",
+            "contact": "Contact",
+            "copyright": "All rights reserved to the Strategic Media Center 2025"
+        }
+    },
+    "auth": {
+        "login": {
+            "sidebarTitle": "Hello, we're here to help you with:",
+            "sidebarContent": {
+                "plan": {
+                    "main": "Plan your media project",
+                    "sub": "and manage it on strategic foundations."
+                },
+                "define": {
+                    "main": "Define higher goals",
+                    "sub": "and ensure the production of media content that achieves them."
+                },
+                "enhance": {
+                    "main": "Enhance competitive capabilities",
+                    "sub": "and reach the target audience."
+                },
+                "Understand": {
+                    "main": "Understand the audience, their tendencies, environment",
+                    "sub": ", and needs, and how to reach them."
+                },
+                "influence": {
+                    "main": "Influence the audience and increase the ability",
+                    "sub": "to change."
+                },
+                "develop": {
+                    "main": "Develop productive capabilities",
+                    "sub": "and their policies, controlling expenses."
+                },
+                "strategicDirection": {
+                    "main": "Enhance the strategic direction",
+                    "sub": "in all efforts."
+                }
+            },
+            "emailLabel": "Email",
+            "emailRequired": "Please enter your email",
+            "passwordLabel": "Password",
+            "passwordRequired": "Please enter your password",
+            "submit": "Login to the Site",
+            "newSubscriber": "New Subscriber",
+            "newUser": "New User"
+        },
+        "signup": {
+            "title": "Create a New Account",
+            "name": "Full Name",
+            "email": "Email"
+        }
+    },
+    "home": {
+        "title": "Welcome to Our Site",
+        "intro": "We specialize in strategic media planning."
+    },
+    "aboutus": {
+        "title": "About Us",
+        "description": "We specialize in strategic media planning."
+    },
+    "contact": {
+        "title": "Contact Us",
+        "description": "Feel free to reach out to us anytime."
+    },
+    "consulting": {
+        "heroText": {
+            "main": "with you .....................",
+            "sub": "and ensure ................"
+        }
+    }
+}

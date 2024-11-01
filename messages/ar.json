@@ -69,6 +69,46 @@
             "title": "Create a New Account",
             "name": "Full Name",
             "email": "Email"
+        },
+        "subscriptionForm": {
+            "name": {
+                "firstName": "الاسم الأول",
+                "secondName": "الاسم الثاني",
+                "lastName": "الاسم الأخير",
+                "placeholder": "أدخل الاسم"
+            },
+            "subscriptionType": {
+                "label": "نوع الاشتراك",
+                "placeholder": "اختر نوع الاشتراك",
+                "individual": "فرد",
+                "organization": "مؤسسة"
+            },
+            "organizationName": {
+                "label": "اسم المؤسسة",
+                "placeholder": "أدخل اسم المؤسسة"
+            },
+            "subscriptionDuration": {
+                "label": "مدة الاشتراك (خصم ١٠٪ عند الاشتراك لسنتين)",
+                "placeholder": "اختر مدة الاشتراك",
+                "1year": "سنة",
+                "2years": "سنتان"
+            },
+            "jobType": {
+                "jobRole": "وظيفة المشترك",
+                "selectJobRole": "اختر الوظيفة",
+                "jobs": "قائمة الوظائف",
+                "none": "بدون",
+                "other": "أخرى"
+            },
+            "submit": "إرسال"
+        },
+        "validationMsg": {
+            "firstNameRequired": "يرجى إدخال الإسم الأول ",
+            "secondNameRequired": "يرجى إدخال الإسم الثاني ",
+            "lastNameRequired": "يرجى إدخال الإسم الثالث ",
+            "subscriptionTypeRequired": "نوع الاشتراك مطلوب",
+            "organizationNameRequired": "اسم المؤسسة مطلوب",
+            "subscriptionDurationRequired": "مدة الاشتراك مطلوبة"
         }
     },
     "home": {

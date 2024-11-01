@@ -69,6 +69,46 @@
             "title": "Create a New Account",
             "name": "Full Name",
             "email": "Email"
+        },
+        "subscriptionForm": {
+            "name": {
+                "firstName": "First Name",
+                "secondName": "Middle Name",
+                "lastName": "Last Name",
+                "placeholder": "Enter name"
+            },
+            "subscriptionType": {
+                "label": "Subscription Type",
+                "placeholder": "Select subscription type",
+                "individual": "Individual",
+                "organization": "Organization"
+            },
+            "organizationName": {
+                "label": "Organization Name",
+                "placeholder": "Enter organization name"
+            },
+            "subscriptionDuration": {
+                "label": "Subscription Duration (10% discount for 2 years)",
+                "placeholder": "Select subscription duration",
+                "1year": "1 year",
+                "2years": "2 years"
+            },
+            "jobType": {
+                "jobRole": "Job Role",
+                "selectJobRole": "Select Job Role",
+                "engineeringAndOtherJobs": "Jobs List",
+                "none": "None",
+                "other": "Other"
+            },
+            "submit": "Submit"
+        },
+        "validationMsg": {
+            "firstNameRequired": "'first Name' is required",
+            "secondNameRequired": "second Name is required",
+            "lastNameRequired": "last Name is required",
+            "subscriptionTypeRequired": "Subscription type is required",
+            "organizationNameRequired": "Organization name is required",
+            "subscriptionDurationRequired": "Subscription duration is required"
         }
     },
     "home": {

@@ -42,7 +42,7 @@ export default function HomePageHeader() {
                   <Link href="/login" className="text-slate-700">
                     تسجيل دخول
                   </Link>
-                  <Link href="#" className="text-slate-700">
+                  <Link href="/signup" className="text-slate-700">
                     تسجيل جديد
                   </Link>
                 </div>

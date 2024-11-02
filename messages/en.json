@@ -93,12 +93,69 @@
                 "1year": "1 year",
                 "2years": "2 years"
             },
+            "email": {
+                "label": "Email",
+                "placeholder": "Enter your email"
+            },
+            "password": {
+                "label": "Create Password",
+                "placeholder": "Enter your password"
+            },
+            "confirmPassword": {
+                "label": "Confirm Password",
+                "placeholder": "Re-enter your password"
+            },
+            "country": {
+                "label": "Country of Residence",
+                "placeholder": "Select Country"
+            },
+            "countryList": {
+                "egypt": "Egypt",
+                "saudiArabia": "Saudi Arabia",
+                "uae": "United Arab Emirates",
+                "jordan": "Jordan",
+                "lebanon": "Lebanon",
+                "syria": "Syria",
+                "iraq": "Iraq",
+                "yemen": "Yemen",
+                "oman": "Oman",
+                "kuwait": "Kuwait",
+                "bahrain": "Bahrain",
+                "qatar": "Qatar",
+                "palestine": "Palestine"
+            },
+            "mobileNumber": {
+                "label": "Mobile Number",
+                "placeholder": "Enter your mobile number"
+            },
             "jobType": {
                 "jobRole": "Job Role",
                 "selectJobRole": "Select Job Role",
                 "engineeringAndOtherJobs": "Jobs List",
                 "none": "None",
                 "other": "Other"
+            },
+            "nationality": {
+                "label": "Nationality",
+                "placeholder": "Select nationality"
+            },
+            "uploadImage": {
+                "label": "Upload Participant Image (Optional)",
+                "placeholder": "Select Image"
+            },
+            "preferredContactMethod": {
+                "label": "Preferred Contact Method",
+                "placeholder": "Choose Contact Method",
+                "email": "Email",
+                "mobile": "Mobile",
+                "whatsapp": "WhatsApp"
+            },
+            "agreements": {
+                "confirmDataAccuracy": "I confirm the accuracy of the entered data.",
+                "read": "I have read",
+                "acceptTerms": " and agree to",
+                "subscriptionTerms": "the subscription terms.",
+                "notifyEvents": "I want to be notified about new events at the center "
             },
             "submit": "Submit"
         },
@@ -108,7 +165,18 @@
             "lastNameRequired": "last Name is required",
             "subscriptionTypeRequired": "Subscription type is required",
             "organizationNameRequired": "Organization name is required",
-            "subscriptionDurationRequired": "Subscription duration is required"
+            "subscriptionDurationRequired": "Subscription duration is required",
+            "emailRequired": "Valid email is required",
+            "passwordRequired": "Password is required",
+            "confirmPasswordRequired": "Please confirm your password",
+            "countryRequired": "Please select your country of residence",
+            "passwordsMustMatch": "Passwords do not match",
+            "mobileNumberRequired": "Mobile number is required",
+            "phoneNumberRequired": "Please enter your phone number",
+            "preferredContactMethodRequired": "Preferred contact method is required",
+            "confirmDataRequired": "You must confirm the accuracy of the data.",
+            "acceptTermsRequired": "You must agree to the subscription terms.",
+            "recaptchaRequired": "Please complete the reCAPTCHA verification"
         }
     },
     "home": {

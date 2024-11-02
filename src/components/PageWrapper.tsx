@@ -12,7 +12,7 @@ export default function PageWrapper({
   sidebarContent
 }: PageWrapperProps) {
   return (
-    <div className="container mx-auto mt-6 flex justify-between gap-4 mb-4">
+    <div className="container mx-auto mt-6 flex justify-between gap-4 mb-4 flex-grow">
       <main className="md:w-3/4">{children}</main>
       <Sidebar title={sidebarTitle} content={sidebarContent} />
     </div>

@@ -52,7 +52,12 @@ export default function SubscriptionForm() {
 
   return (
     <PageWrapper
-      sidebarContent={<h1>subscription</h1>}
+      sidebarContent={
+        <ul className="mt-4">
+          <li className="mb-2">أخبار المركز</li>
+          <li className="mb-2">أخبار المركز</li>
+        </ul>
+      }
       sidebarTitle={undefined}
     >
       <div className="w-full md:w-3/4 mx-auto p-4 rounded-lg shadow-lg bg-slate-50">

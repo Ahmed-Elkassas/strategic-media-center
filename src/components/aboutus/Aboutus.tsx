@@ -1,29 +1,8 @@
 "use client";
 
-import { useState } from "react";
-import { Document, Page } from "react-pdf";
 import PageWrapper from "../PageWrapper";
-import * as pdfjs from "pdfjs-dist";
-
-pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-  "pdfjs-dist/build/pdf.worker.min.mjs",
-  import.meta.url
-).toString();
 
 export default function Aboutus() {
-  const [numPages, setNumPages] = useState<number>(0);
-  const [pageNumber, setPageNumber] = useState<number>(1);
-
-  const onDocumentLoadSuccess = ({ numPages }: { numPages: number }) => {
-    setNumPages(numPages);
-    setPageNumber(1); // Reset to the first page
-  };
-
-  const goToNextPage = () =>
-    setPageNumber((prevPage) => Math.min(prevPage + 1, numPages));
-  const goToPrevPage = () =>
-    setPageNumber((prevPage) => Math.max(prevPage - 1, 1));
-
   return (
     <PageWrapper
       sidebarContent={

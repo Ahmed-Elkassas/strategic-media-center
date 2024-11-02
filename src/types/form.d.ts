@@ -14,7 +14,8 @@ export interface SubscriptionFormValues {
   organizationName?: string;
   subscriptionDuration: string;
   jobRole?: string;
-  avatar?: any; // Refine based on your requirements
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  avatar?: any;
   preferredContactMethod: string;
   confirmDataAccuracy: boolean;
   acceptTerms: boolean;

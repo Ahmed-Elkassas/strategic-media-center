@@ -41,6 +41,7 @@ export default function SubscriptionForm() {
     // Submit form data here
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const normFile = (e: any) => {
     console.log("Upload event:", e);
     if (Array.isArray(e)) {

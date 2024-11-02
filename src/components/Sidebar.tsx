@@ -29,7 +29,7 @@ export default function Sidebar({ title, content }: SidebarProps) {
             <h3 className="font-medium">فعالیات الشھر القادم</h3>
           </div>
         )}
-        <article>{content}</article>
+        <article className="min-h-[200px]">{content}</article>
       </aside>
     </div>
   );

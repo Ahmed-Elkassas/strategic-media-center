@@ -7,7 +7,7 @@ export default function SubscriptionAgreement() {
       sidebarContent={<h1>أخبار المركز</h1>}
       sidebarTitle={undefined}
     >
-      SubscriptionAgreement
+      الشروط
     </PageWrapper>
   );
 }

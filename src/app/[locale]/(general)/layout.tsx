@@ -30,7 +30,7 @@ export default async function RootLayout({
 
   return (
     <html lang="ar" dir={dir}>
-      <body>
+      <body className="min-h-screen flex flex-col">
         <NextIntlClientProvider messages={messages}>
           <Navbar />
           <Header />

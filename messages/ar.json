@@ -93,12 +93,69 @@
                 "1year": "سنة",
                 "2years": "سنتان"
             },
+            "email": {
+                "label": "البريد الإلكتروني",
+                "placeholder": "أدخل بريدك الإلكتروني"
+            },
+            "password": {
+                "label": "إنشاء كلمة المرور",
+                "placeholder": "أدخل كلمة المرور"
+            },
+            "confirmPassword": {
+                "label": "إعادة كلمة المرور",
+                "placeholder": "أعد إدخال كلمة المرور"
+            },
+            "mobileNumber": {
+                "label": "رقم الموبایل",
+                "placeholder": "أدخل رقم الموبایل"
+            },
+            "country": {
+                "label": "دولة المقر",
+                "placeholder": "اختر دولة المقر"
+            },
+            "countryList": {
+                "egypt": "مصر",
+                "saudiArabia": "السعودية",
+                "uae": "الإمارات",
+                "jordan": "الأردن",
+                "lebanon": "لبنان",
+                "syria": "سوريا",
+                "iraq": "العراق",
+                "yemen": "اليمن",
+                "oman": "عُمان",
+                "kuwait": "الكويت",
+                "bahrain": "البحرين",
+                "qatar": "قطر",
+                "palestine": "فلسطين"
+            },
             "jobType": {
                 "jobRole": "وظيفة المشترك",
                 "selectJobRole": "اختر الوظيفة",
                 "jobs": "قائمة الوظائف",
                 "none": "بدون",
                 "other": "أخرى"
+            },
+            "nationality": {
+                "label": "الجنسية",
+                "placeholder": "اختر الجنسية"
+            },
+            "uploadImage": {
+                "label": "تحمیل صورة المشترك",
+                "placeholder": "اختر صورة"
+            },
+            "preferredContactMethod": {
+                "label": "الطریقة المفضلة للتواصل معكم",
+                "placeholder": "اختر طريقة التواصل",
+                "email": "البرید الإلكتروني",
+                "mobile": "الموبایل",
+                "whatsapp": "الواتساب"
+            },
+            "agreements": {
+                "confirmDataAccuracy": "أقر بصحة البیانات المدخلة.",
+                "read": "قرأت ",
+                "subscriptionTerms": "إتفاقية الشتراك في خدمات المركز، ",
+                "acceptTerms": "وأوافق على ما جاء فیھا.",
+                "notifyEvents": "أرغب في إشعاري بالفعالیات الجدیدة في المركز"
             },
             "submit": "إرسال"
         },
@@ -108,7 +165,18 @@
             "lastNameRequired": "يرجى إدخال الإسم الثالث ",
             "subscriptionTypeRequired": "نوع الاشتراك مطلوب",
             "organizationNameRequired": "اسم المؤسسة مطلوب",
-            "subscriptionDurationRequired": "مدة الاشتراك مطلوبة"
+            "subscriptionDurationRequired": "مدة الاشتراك مطلوبة",
+            "emailRequired": "البريد الإلكتروني مطلوب ويجب أن يكون صالحًا",
+            "passwordRequired": "كلمة المرور مطلوبة",
+            "confirmPasswordRequired": "يرجى تأكيد كلمة المرور",
+            "countryRequired": "يرجى اختيار دولة المقر",
+            "passwordsMustMatch": "كلمات المرور غير متطابقة",
+            "mobileNumberRequired": "رقم الموبایل مطلوب",
+            "phoneNumberRequired": "أدخل رقم الهاتف",
+            "preferredContactMethodRequired": "الطریقة المفضلة للتواصل مطلوبة",
+            "confirmDataRequired": "يجب عليك تأكيد صحة البيانات.",
+            "acceptTermsRequired": "يجب الموافقة على اتفاقية الاشتراك.",
+            "recaptchaRequired": "يرجى إكمال التحقق من reCAPTCHA"
         }
     },
     "home": {

@@ -418,7 +418,7 @@ export default function SubscriptionForm() {
             <Checkbox>
               {t("subscriptionForm.agreements.read")}
               <Link
-                href="/terms"
+                href="/subscription-agreement"
                 target="_blank"
                 className="underline underline-offset-4"
               >

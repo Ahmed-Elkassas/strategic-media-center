@@ -5,10 +5,10 @@ import ReCAPTCHA from "react-google-recaptcha";
 import { useTranslations } from "next-intl";
 import PageWrapper from "../PageWrapper";
 import { useState } from "react";
-import Link from "next/link";
 import { SignupFormValues } from "@/types/form";
 import { getCountryOptions } from "@/lib/helpers";
 import { COUNTRY_CODES } from "@/constants/formOptions";
+import { Link } from "@/i18n/routing";
 
 const { Option } = Select;
 
@@ -224,7 +224,7 @@ export default function SignupForm() {
             <Checkbox>
               {t("subscriptionForm.agreements.read")}
               <Link
-                href="/terms"
+                href="/subscription-agreement"
                 target="_blank"
                 className="underline underline-offset-4"
               >

@@ -17,9 +17,9 @@ export default function Navbar() {
         } w-[150px] lg:w-[300px] h-auto`}
       >
         <Image
-          src="https://placehold.co/300x165?text=logo"
+          src="/images/logo.jpg"
           alt="Logo"
-          className="w-full md:w-[150px] lg:w-[300px] h-full"
+          className="w-full md:w-[165px]  h-auto"
           width="300"
           height="165"
           priority={false}

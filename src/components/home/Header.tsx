@@ -3,7 +3,13 @@
 import Image from "next/image";
 import { Link } from "@/i18n/routing";
 import { useLocale, useTranslations } from "next-intl";
-import { MenuOutlined } from "@ant-design/icons";
+import {
+  FacebookFilled,
+  InstagramFilled,
+  MenuOutlined,
+  TwitterCircleFilled,
+  YoutubeFilled
+} from "@ant-design/icons";
 export default function HomePageHeader() {
   const t = useTranslations("common.links");
 
@@ -19,14 +25,14 @@ export default function HomePageHeader() {
             isRTL
               ? "right-[20px] lg:right-[50px]"
               : "left-[20px] lg:left-[50px]"
-          } w-[150px] lg:w-[300px] h-auto`}
+          } `}
         >
           <Image
-            src="https://placehold.co/300x250?text=logo"
+            src="/images/logo.jpg"
             alt="Logo"
-            className="w-full md:w-[150px] lg:w-[300px] h-full"
+            className="w-full md:w-[253px] h-auto"
             width="300"
-            height="250"
+            height="165"
             priority={false}
           />
         </div>
@@ -54,7 +60,7 @@ export default function HomePageHeader() {
                       target="_blank"
                       className="text-slate-700"
                     >
-                      twitter
+                      <TwitterCircleFilled style={{ fontSize: "1.3rem" }} />
                     </Link>
                   </li>
                   <li>
@@ -63,7 +69,7 @@ export default function HomePageHeader() {
                       target="_blank"
                       className="text-slate-700"
                     >
-                      youtube
+                      <YoutubeFilled style={{ fontSize: "1.3rem" }} />
                     </Link>
                   </li>
                   <li>
@@ -72,7 +78,7 @@ export default function HomePageHeader() {
                       target="_blank"
                       className="text-slate-700"
                     >
-                      instgram
+                      <InstagramFilled style={{ fontSize: "1.3rem" }} />
                     </Link>
                   </li>
                   <li>
@@ -81,7 +87,7 @@ export default function HomePageHeader() {
                       target="_blank"
                       className="text-slate-700"
                     >
-                      facebook
+                      <FacebookFilled style={{ fontSize: "1.3rem" }} />
                     </Link>
                   </li>
                 </ul>
@@ -89,12 +95,13 @@ export default function HomePageHeader() {
             </div>
           </div>
 
+          {/* Mobile view */}
           <div className="md:hidden flex justify-between items-center px-4">
             <div className="w-[200px] h-auto">
               <Image
-                src="https://placehold.co/300x250?text=logo"
+                src="/images/logo.jpg"
                 alt="Logo"
-                className="w-full h-full"
+                className="w-[150px] h-auto"
                 height={150}
                 width={200}
               />

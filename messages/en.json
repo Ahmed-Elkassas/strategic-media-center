@@ -22,6 +22,12 @@
             "privacyPolicy": "Privacy Policy",
             "contact": "Contact",
             "copyright": "All rights reserved to the Strategic Media Center 2025"
+        },
+        "breadcrumb": {
+            "consulting": {
+                "title": "consulting",
+                "consultingRequest": "consulting Request"
+            }
         }
     },
     "auth": {

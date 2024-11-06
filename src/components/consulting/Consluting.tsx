@@ -8,7 +8,7 @@ export default function Consulting() {
 
   return (
     <section className="w-full">
-      <h1 className="text-xl mb-4 font-bold">{tCommon("links.consulting")}</h1>
+      <h1 className="text-lg mb-4 font-bold">{tCommon("links.consulting")}</h1>
       <article className="w-full h-[520px]">
         {/* <Image
           src="https://placehold.co/955x420"

@@ -33,3 +33,22 @@ export interface SignupFormValues {
   acceptTerms: boolean;
   notifyEvents?: boolean;
 }
+
+export interface ConsultingRequestFormValues {
+  firstName: string;
+  secondName: string;
+  lastName: string;
+  email: string;
+  jobPosition: string;
+  phone: string;
+  organizationName: string;
+  establishmentDate: string;
+  ownershipType: string;
+  wayType: string;
+  country: string;
+  numberOfEmployees: string;
+  numberOfOffices: string;
+  institutionChallenges?: string;
+  estimatedBudget: string;
+  additionalInfo?: string;
+}

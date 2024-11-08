@@ -31,7 +31,7 @@ export default function ConsultingDetails({ slug }: { slug: string }) {
             )
           },
           {
-            title: t("consultingRequest")
+            title: t("consultingDetails")
           }
         ]}
         separator=">"
@@ -102,6 +102,12 @@ export default function ConsultingDetails({ slug }: { slug: string }) {
           </ul>
         </div>
       </div>
+      <Link
+        href="/consulting/consulting-request"
+        className="px-6 py-3 flex justify-end underline underline-offset-4 hover:underline-offset-2"
+      >
+        طلب إستشارة
+      </Link>
     </PageWrapper>
   );
 }

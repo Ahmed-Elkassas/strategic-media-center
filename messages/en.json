@@ -26,7 +26,12 @@
         "breadcrumb": {
             "consulting": {
                 "title": "consulting",
-                "consultingRequest": "consulting Request"
+                "consultingDetails": "Consultation Data Card",
+                "consultingRequest": "consulting Request",
+                "consultingReceived": "Consultation Received",
+                "admin": {
+                    "adminConsultingForm": "Consulting Data Form"
+                }
             }
         }
     },
@@ -205,7 +210,95 @@
         "servicesTitle": "The center provides consulting services to countries, ministries of media, media institutions, and non-media organizations. These services include foundational or developmental consultations for their media projects, assisting them in establishing their projects based on clear and defined strategic principles, capable of achieving their goals and objectives toward their target audience, in alignment with market policies and competition",
         "linksTitle": "title ",
         "serviceNotFound": "Service not found",
-        "loading": "Loading..."
+        "loading": "Loading...",
+        "confidentialityStatement": "The center is committed to maintaining the confidentiality of the information provided to it.",
+        "received": {
+            "title": "Consultation Request Received",
+            "message": "Thank you for reaching out to us. We will review your request and contact you within two business days.",
+            "requestAnother": "Request Another Consultation"
+        },
+        "relatedConsultations": {
+            "title": "Related Consultations",
+            "item1": "Consultation 1",
+            "item2": "Consultation 2",
+            "item3": "Consultation 3"
+        },
+        "form": {
+            "numberOfEmployees": {
+                "label": "Number of Employees",
+                "placeholder": "Select the number of employees"
+            },
+            "numberOfOffices": {
+                "label": "Number of Offices",
+                "placeholder": "Select the number of offices"
+            },
+            "validationMsg": {
+                "numberOfEmployees": "Please select the number of employees",
+                "numberOfOffices": "Please select the number of offices",
+                "estimatedBudget": "Please select the estimated annual budget",
+                "institutionChallenges": "Please select the challenges faced by the institution"
+            }
+        },
+        "admin": {
+            "fields": {
+                "consultationTitle": {
+                    "label": "Consultation Title",
+                    "placeholder": "Enter the consultation title",
+                    "validationMsg": "Please provide the consultation title"
+                },
+                "consultationField": {
+                    "label": "Consultation Field",
+                    "placeholder": "Select the consultation field",
+                    "validationMsg": "Please select the consultation field",
+                    "options": {
+                        "foundation": "Foundation",
+                        "development": "Development",
+                        "analysis": "Analysis",
+                        "evaluation": "Evaluation",
+                        "supervision": "Supervision",
+                        "other": "Other"
+                    }
+                },
+                "generalGoal": {
+                    "label": "General Goal",
+                    "placeholder": "Enter the general goal",
+                    "validationMsg": "Please provide the general goal"
+                },
+                "summary": {
+                    "label": "Consultation Summary",
+                    "placeholder": "Provide a summary (30-50 words)",
+                    "validationMsg": "Please provide a summary"
+                },
+                "workPhases": {
+                    "label": "Work Phases",
+                    "placeholder": "Describe the work phases",
+                    "validationMsg": "Please provide the work phases"
+                },
+                "approximateDuration": {
+                    "label": "Approximate Duration",
+                    "placeholder": "Enter the approximate duration",
+                    "validationMsg": "Please provide the approximate duration"
+                },
+                "relatedConsultations": {
+                    "label": "Related Consultations",
+                    "placeholder": "Select related consultations",
+                    "validationMsg": "Please select related consultations"
+                },
+                "otherRelatedServices": {
+                    "label": "Other Related Services",
+                    "placeholder": "Select other related services"
+                },
+                "reviewed": {
+                    "label": "Reviewed",
+                    "reviewedRequired": "Please review the information before saving",
+                    "savedSuccessfully": "The form has been saved successfully"
+                }
+            },
+            "buttons": {
+                "save": "Save",
+                "cancel": "Cancel"
+            }
+        }
     },
     "notFound": {
         "title": "Page Not Found",

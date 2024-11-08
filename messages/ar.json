@@ -28,10 +28,7 @@
                 "title": "الإستشارات",
                 "consultingDetails": "بطاقة بیانات الاستشارة",
                 "consultingRequest": "طلب إستشارة",
-                "consultingReceived": "استلام طلب الاستشارة",
-                "admin": {
-                    "adminConsultingForm": "بطاقة إدخال بيانات الاستشارة"
-                }
+                "consultingReceived": "استلام طلب الاستشارة"
             }
         }
     },
@@ -237,66 +234,6 @@
                 "numberOfOffices": "يرجى اختيار عدد المكاتب",
                 "estimatedBudget": "يرجى اختيار الـموازنـة الـسنویـة الـتقدیـریـة",
                 "institutionChallenges": "يرجى اختيار المجالات التي تعاني منھا المؤسسة"
-            }
-        },
-        "admin": {
-            "fields": {
-                "consultationTitle": {
-                    "label": "عنوان الاستشارة",
-                    "placeholder": "أدخل عنوان الاستشارة",
-                    "validationMsg": "يرجى إدخال عنوان الاستشارة"
-                },
-                "consultationField": {
-                    "label": "مجال عمل الاستشارة",
-                    "placeholder": "اختر مجال الاستشارة",
-                    "validationMsg": "يرجى اختيار مجال الاستشارة",
-                    "options": {
-                        "foundation": "تأسيس",
-                        "development": "تطوير",
-                        "analysis": "تحليل",
-                        "evaluation": "قياس",
-                        "supervision": "إشراف",
-                        "other": "أخرى"
-                    }
-                },
-                "generalGoal": {
-                    "label": "الهدف العام للاستشارة",
-                    "placeholder": "أدخل الهدف العام",
-                    "validationMsg": "يرجى إدخال الهدف العام"
-                },
-                "summary": {
-                    "label": "ملخص الاستشارة",
-                    "placeholder": "أدخل ملخص (٣٠-٥٠ كلمة)",
-                    "validationMsg": "يرجى إدخال الملخص"
-                },
-                "workPhases": {
-                    "label": "مراحل العمل",
-                    "placeholder": "أدخل مراحل العمل",
-                    "validationMsg": "يرجى إدخال مراحل العمل"
-                },
-                "approximateDuration": {
-                    "label": "المدة التقريبية",
-                    "placeholder": "أدخل المدة التقريبية",
-                    "validationMsg": "يرجى إدخال المدة التقريبية"
-                },
-                "relatedConsultations": {
-                    "label": "استشارات ذات صلة",
-                    "placeholder": "اختر الاستشارات ذات الصلة",
-                    "validationMsg": "يرجى اختيار الاستشارات ذات الصلة"
-                },
-                "otherRelatedServices": {
-                    "label": "خدمات أخرى ذات صلة",
-                    "placeholder": "اختر الخدمات ذات الصلة"
-                },
-                "reviewed": {
-                    "label": "تم التدقيق",
-                    "reviewedRequired": "الرجاء تدقيق المعلومات قبل الحفظ",
-                    "savedSuccessfully": "تم حفظ النموذج بنجاح"
-                }
-            },
-            "buttons": {
-                "save": "حفظ",
-                "cancel": "إلغاء"
             }
         }
     },

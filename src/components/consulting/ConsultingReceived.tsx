@@ -1,53 +1,43 @@
 "use client";
 
-import { Breadcrumb } from "antd";
 import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
-import PageWrapper from "../PageWrapper";
-import { CheckCircleTwoTone } from "@ant-design/icons";
+import SuccessMessage from "../shared/SuccessMessage";
 
 export default function ConsultingReceived() {
   const t = useTranslations("consulting");
   const tBreadcrumb = useTranslations("common");
 
+  const message = (
+    <h1 className="text-xl font-bold text-center text-white mb-4">
+      {t("received.title")}
+    </h1>
+  );
+
+  const additionalMessage = (
+    <p className="text-lg text-white">{t("received.message")}</p>
+  );
+
   return (
-    <PageWrapper sidebarTitle={undefined} sidebarContent={undefined}>
-      {/* Breadcrumb */}
-      <Breadcrumb
-        items={[
-          {
-            title: (
-              <Link
-                href="/consulting"
-                className="hover:!bg-transparent hover:underline"
-              >
-                {tBreadcrumb("breadcrumb.consulting.title")}
-              </Link>
-            )
-          },
-          {
-            title: tBreadcrumb("breadcrumb.consulting.consultingReceived")
-          }
-        ]}
-        separator=">"
-        className="mb-4 text-gray-600 text-lg font-bold"
-      />
-
-      {/* Confirmation Message */}
-      <div className="mt-4 mx-auto max-w-3xl bg-[rgba(83,196,26,0.75)]  p-6 rounded-lg shadow-md">
-        <span className="block text-center">
-          <CheckCircleTwoTone
-            twoToneColor="#52c41a"
-            style={{ fontSize: "25px" }}
-          />
-        </span>
-        <h1 className="text-xl font-bold text-center text-white mb-4">
-          {t("received.title")}
-        </h1>
-        <p className="text-lg text-white">{t("received.message")}</p>
-      </div>
-
-      {/* Related Consultations */}
+    <SuccessMessage
+      breadcrumbItems={[
+        {
+          title: (
+            <Link
+              href="/consulting"
+              className="hover:!bg-transparent hover:underline"
+            >
+              {tBreadcrumb("breadcrumb.consulting.title")}
+            </Link>
+          )
+        },
+        {
+          title: tBreadcrumb("breadcrumb.consulting.consultingReceived")
+        }
+      ]}
+      message={message}
+      additionalMessage={additionalMessage}
+    >
       <div className="mt-6">
         <h2 className="text-xl font-semibold text-gray-800 mb-4">
           {t("relatedConsultations.title")}
@@ -68,6 +58,6 @@ export default function ConsultingReceived() {
           {t("received.requestAnother")}
         </Link>
       </div>
-    </PageWrapper>
+    </SuccessMessage>
   );
 }

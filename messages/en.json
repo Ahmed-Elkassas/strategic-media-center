@@ -37,6 +37,11 @@
             "signup": {
                 "title": "New User Registration for the Website",
                 "signupSuccess": "Registration Successful"
+            },
+            "training": {
+                "title": "training",
+                "courses": "courses",
+                "subscribeToRemoteCourse": "Subscribe To Remote Course"
             }
         }
     },

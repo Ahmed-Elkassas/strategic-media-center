@@ -7,3 +7,13 @@ export function getCountryOptions(
     value: country.code
   }));
 }
+
+type DirectionType = "ltr" | "rtl";
+
+const localeDirection: Record<string, DirectionType> = {
+  ar: "rtl", // Arabic
+  en: "ltr" // English
+};
+
+export const getDirection = (locale: string): DirectionType =>
+  localeDirection[locale] || "ltr";

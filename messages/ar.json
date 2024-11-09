@@ -37,6 +37,11 @@
             "signup": {
                 "title": "تسجیل مستخدم جدید للموقع",
                 "signupSuccess": "نجاح عملية التسجيل"
+            },
+            "training": {
+                "title": "التدريب",
+                "courses": "الدورات",
+                "subscribeToRemoteCourse": "الإشتراك في دورة عن بعد"
             }
         }
     },

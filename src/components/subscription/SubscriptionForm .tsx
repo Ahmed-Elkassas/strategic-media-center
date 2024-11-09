@@ -7,7 +7,7 @@ import PageWrapper from "../PageWrapper";
 import { useState } from "react";
 import { UploadOutlined } from "@ant-design/icons";
 import { SubscriptionFormValues } from "@/types/form";
-import { Link } from "@/i18n/routing";
+import { Link, redirect } from "@/i18n/routing";
 import { getCountryOptions } from "@/lib/helpers";
 import { COUNTRY_CODES, COUNTRY_OPTIONS } from "@/constants/formOptions";
 
@@ -36,8 +36,8 @@ export default function SubscriptionForm() {
       alert(t("validationMsg.recaptchaRequired"));
       return;
     }
-
     console.log("Form values:", values);
+    redirect({ href: "/subscription-success", locale: "auto" });
     // Submit form data here
   };
 

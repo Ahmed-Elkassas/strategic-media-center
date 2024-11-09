@@ -29,6 +29,14 @@
                 "consultingDetails": "Consultation Data Card",
                 "consultingRequest": "consulting Request",
                 "consultingReceived": "Consultation Received"
+            },
+            "subscribe": {
+                "title": "Subscribe to Center Services",
+                "subscribeSuccess": "Successful sign-up process"
+            },
+            "signup": {
+                "title": "New User Registration for the Website",
+                "signupSuccess": "Registration Successful"
             }
         }
     },
@@ -76,7 +84,13 @@
         "signup": {
             "title": "Create a New Account",
             "name": "Full Name",
-            "email": "Email"
+            "email": "Email",
+            "success": {
+                "messageWithAction": "The registration process was successful. You can now log in and browse the website in accordance with",
+                "subscriptionAgreementAction": "the agreement for the center's services",
+                "login": "Log in to the website",
+                "subscribe": "Subscribe to the center's services"
+            }
         },
         "subscriptionForm": {
             "name": {
@@ -165,7 +179,14 @@
                 "subscriptionTerms": "the subscription terms.",
                 "notifyEvents": "I want to be notified about new events at the center "
             },
-            "submit": "Submit"
+            "submit": "Submit",
+            "success": {
+                "message": "Your subscription has been successfully processed. Welcome to the list of our subscribers!",
+                "messageWithAction": " You can now enjoy the benefits outlined in",
+                "subscriptionAgreementAction": "Service Subscription Agreement",
+                "login": "Log in to the website",
+                "register": "Register a new user"
+            }
         },
         "validationMsg": {
             "firstNameRequired": "'first Name' is required",

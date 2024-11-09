@@ -29,6 +29,14 @@
                 "consultingDetails": "بطاقة بیانات الاستشارة",
                 "consultingRequest": "طلب إستشارة",
                 "consultingReceived": "استلام طلب الاستشارة"
+            },
+            "subscribe": {
+                "title": "الاشتراك في خدمات المركز",
+                "subscribeSuccess": "نجاح عملیة الاشتراك"
+            },
+            "signup": {
+                "title": "تسجیل مستخدم جدید للموقع",
+                "signupSuccess": "نجاح عملية التسجيل"
             }
         }
     },
@@ -76,7 +84,13 @@
         "signup": {
             "title": "Create a New Account",
             "name": "Full Name",
-            "email": "Email"
+            "email": "Email",
+            "success": {
+                "messageWithAction": "تمت عملية التسجيل بنجاح، يمكنكم تسجيل الدخول وتصفح الموقع وفقا",
+                "subscriptionAgreementAction": "لإتفاقية في خدمات المركز",
+                "login": "تسجیل الدخول للموقع",
+                "subscribe": "الاشتراك في خدمات المركز"
+            }
         },
         "subscriptionForm": {
             "name": {
@@ -165,7 +179,14 @@
                 "acceptTerms": "وأوافق على ما جاء فیھا.",
                 "notifyEvents": "أرغب في إشعاري بالفعالیات الجدیدة في المركز"
             },
-            "submit": "إرسال"
+            "submit": "إرسال",
+            "success": {
+                "message": "تمت عملية الاشتراك بنجاح. مرحبا بكم في قائمة المشتركین في المركز! الاشتراك في خدمات المركز.",
+                "messageWithAction": "یمكنكم الآن التمتع بمزایا الاشتراك الموضحة في",
+                "subscriptionAgreementAction": "اتفاقیة الاشتراك في خدمات المركز",
+                "login": "تسجیل الدخول للموقع",
+                "register": "تسجیل مستخدم جدید"
+            }
         },
         "validationMsg": {
             "firstNameRequired": "يرجى إدخال الإسم الأول ",

@@ -41,7 +41,8 @@
             "training": {
                 "title": "training",
                 "courses": "courses",
-                "subscribeToRemoteCourse": "Subscribe To Remote Course"
+                "subscribeToRemoteCourse": "Subscribe To Remote Course",
+                "coursesTypes": "courses Types"
             }
         }
     },
@@ -261,6 +262,11 @@
                 "estimatedBudget": "Please select the estimated annual budget",
                 "institutionChallenges": "Please select the challenges faced by the institution"
             }
+        }
+    },
+    "training": {
+        "coursesTypes": {
+            "link": "courses type"
         }
     },
     "notFound": {

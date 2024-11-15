@@ -42,7 +42,8 @@
                 "title": "التدريب",
                 "courses": "الدورات",
                 "subscribeToRemoteCourse": "الإشتراك في دورة عن بعد",
-                "coursesTypes": "أنواع الدورات"
+                "coursesTypes": "أنواع الدورات",
+                "subscribeToPrivateCourse": "طلب دورة خاصة"
             }
         }
     },
@@ -279,7 +280,9 @@
                     "third": "دورات فردیة، یتم تصمیمھا خصيخصا للقادة والمدراء والمسؤلين.",
                     "fourth": "دورات إضافیة (غیر موجودة في القائمة)."
                 }
-            }
+            },
+            "subscribeToRemoteCourse": "الإشتراك في دورة عن بعد",
+            "subscribeToPrivateCourse": "طلب دورة خاصة"
         }
     },
     "notFound": {

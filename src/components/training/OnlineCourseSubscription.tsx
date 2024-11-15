@@ -10,7 +10,7 @@ import {
   trainingCoursesData
 } from "@/config/tables/trainingCoursesConfig";
 
-export default function Courses() {
+export default function OnlineCourseSubscription() {
   const tBreadcrumb = useTranslations("common.breadcrumb");
 
   return (
@@ -30,10 +30,10 @@ export default function Courses() {
           {
             title: (
               <Link
-                href="/courses"
+                href="/training/courses/types"
                 className="hover:!bg-transparent hover:underline"
               >
-                {tBreadcrumb("training.courses")}
+                {tBreadcrumb("training.coursesTypes")}
               </Link>
             )
           },

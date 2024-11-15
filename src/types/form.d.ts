@@ -52,3 +52,24 @@ export interface ConsultingRequestFormValues {
   estimatedBudget: string;
   additionalInfo?: string;
 }
+
+export interface PrivateCourseSubscriptionFormValues {
+  type: string; // Type of the event (e.g., course, lecture)
+  shape: string; // Presentation format of the event
+  firstName: string;
+  secondName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  customEventTitle?: string; // Optional field for custom event titles
+  jobTitle: string;
+  requestEntity: string; // Individual or organization
+  organizationName: string;
+  organizationNature: string; // Media-related or non-media
+  courseTitle: string;
+  eventCountry: string;
+  preferredDate: string; // Use `string` to handle the date as a formatted string
+  additionalInfo?: string; // Optional additional information
+  requestDate: string; // Auto-filled date
+  confirmDataAccuracy: boolean; // Checkbox for data accuracy confirmation
+}

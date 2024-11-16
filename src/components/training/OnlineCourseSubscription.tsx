@@ -12,6 +12,7 @@ import {
 
 export default function OnlineCourseSubscription() {
   const tBreadcrumb = useTranslations("common.breadcrumb");
+  const tTraining = useTranslations("training");
 
   return (
     <PageWrapper sidebarContent={undefined} sidebarTitle={undefined}>
@@ -49,6 +50,20 @@ export default function OnlineCourseSubscription() {
         dataSource={trainingCoursesData}
         columns={trainingCoursesColumns}
       />
+      <div className="mt-6 flex justify-between items-center">
+        <Link
+          href="/training/courses/private-course-request"
+          className="underline underline-offset-4 hover:underline-offset-2"
+        >
+          {tTraining("coursesTypes.subscribeToPrivateCourse")}
+        </Link>
+        <Link
+          href="/training/courses/fee-payment"
+          className="underline underline-offset-4 hover:underline-offset-2"
+        >
+          {tBreadcrumb("training.feePayment")}
+        </Link>
+      </div>
     </PageWrapper>
   );
 }

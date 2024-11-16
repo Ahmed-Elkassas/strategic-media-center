@@ -28,7 +28,7 @@ export default function ReusableTable({
           dataSource={dataSource}
           columns={columns}
           rowKey={rowKey}
-          pagination={{ pageSize: 10 }}
+          pagination={dataSource?.length > 10 ? { pageSize: 10 } : false}
           bordered
         />
       </div>

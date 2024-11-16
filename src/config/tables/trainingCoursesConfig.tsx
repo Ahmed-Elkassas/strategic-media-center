@@ -1,4 +1,5 @@
-import { Button } from "antd";
+import { Link } from "@/i18n/routing";
+import { Button, DatePicker } from "antd";
 
 interface TableRow {
   id: number;
@@ -12,7 +13,12 @@ export const trainingCoursesColumns = [
   {
     title: "اسم الدورة",
     dataIndex: "courseName",
-    key: "courseName"
+    key: "courseName",
+    render: (_: unknown, record: TableRow) => (
+      <Link href="/training/courses/details" className="underline underline-offset-4 hover:underline-offset-2">
+        {record.courseName}
+      </Link>
+    )
   },
   {
     title: "المدة",
@@ -28,7 +34,7 @@ export const trainingCoursesColumns = [
     title: "تاريخ الدورة",
     dataIndex: "courseDate",
     key: "courseDate",
-    render: () => <Button type="text">اختر</Button>
+    render: () => <DatePicker placeholder="اختر" style={{ width: "80px" }} />
   },
   {
     title: "الرسوم",

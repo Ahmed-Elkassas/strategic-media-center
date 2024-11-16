@@ -56,7 +56,7 @@ export default function CourseTypes() {
             {tCourses("subscribeToRemoteCourse")}
           </Link>
           <Link
-            href="/training/courses/private-course-subscription"
+            href="/training/courses/private-course-request"
             className="underline underline-offset-4 hover:underline-offset-2"
           >
             {tCourses("subscribeToPrivateCourse")}

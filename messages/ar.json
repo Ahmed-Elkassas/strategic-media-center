@@ -1,293 +1,327 @@
 {
-    "common": {
-        "links": {
-            "home": "الرئيسية",
-            "aboutus": "التعريف",
-            "philosophy": "فلسفة المركز",
-            "consulting": "الإستشارات",
-            "training": "التدريب",
-            "lectures": "المحاضرات",
-            "studies": "الدراسات",
-            "seminars": "الندوات",
-            "opinionPolls": "قياس الرأي",
-            "forums": "منتديات الحوار",
-            "news": "أخبار المركز"
-        },
-        "footer": {
-            "subscribe": "الاشتراك في خدمات المركز",
-            "signup": "تسجيل مستخدم جديد",
-            "login": "تسجيل الدخول للموقع",
-            "centerServiceAgreement": "اتفاقية الاشتراك في خدمات المركز",
-            "serviceAgreement": "اتفاقية الخدمة",
-            "privacyPolicy": "سياسة الخصوصية",
-            "contact": "اتصال",
-            "copyright": "جميع الحقوق محفوظة لمركز الإعلام الإستراتيجي 2025"
-        },
-        "breadcrumb": {
-            "consulting": {
-                "title": "الإستشارات",
-                "consultingDetails": "بطاقة بیانات الاستشارة",
-                "consultingRequest": "طلب إستشارة",
-                "consultingReceived": "استلام طلب الاستشارة"
-            },
-            "subscribe": {
-                "title": "الاشتراك في خدمات المركز",
-                "subscribeSuccess": "نجاح عملیة الاشتراك"
-            },
-            "signup": {
-                "title": "تسجیل مستخدم جدید للموقع",
-                "signupSuccess": "نجاح عملية التسجيل"
-            },
-            "training": {
-                "title": "التدريب",
-                "courses": "الدورات",
-                "subscribeToRemoteCourse": "الإشتراك في دورة عن بعد",
-                "coursesTypes": "أنواع الدورات",
-                "subscribeToPrivateCourse": "طلب دورة خاصة"
-            }
-        }
+  "common": {
+    "links": {
+      "home": "الرئيسية",
+      "aboutus": "التعريف",
+      "philosophy": "فلسفة المركز",
+      "consulting": "الإستشارات",
+      "training": "التدريب",
+      "lectures": "المحاضرات",
+      "studies": "الدراسات",
+      "seminars": "الندوات",
+      "opinionPolls": "قياس الرأي",
+      "forums": "منتديات الحوار",
+      "news": "أخبار المركز"
     },
-    "auth": {
-        "login": {
-            "sidebarTitle": "مرحبا، نحن هنا لمساعدتك في:",
-            "sidebarContent": {
-                "plan": {
-                    "main": "تخطيط مشروعك الإعلامية",
-                    "sub": "وإدارتها علي أسس استراتيجية."
-                },
-                "define": {
-                    "main": "تحديد الأهداف العليا وضمان إنتاج",
-                    "sub": "المحتوي الإعلامي الذي يحققها."
-                },
-                "enhance": {
-                    "main": "تعزیز القدرات التنافسیة والوصول",
-                    "sub": "إلى الجمھور المستھدف"
-                },
-                "Understand": {
-                    "main": "فھم الجمھور ومیولھ وبيئته",
-                    "sub": "واحتیاجاته، وكیفیة الوصول إليه"
-                },
-                "influence": {
-                    "main": "التأثیر في الجمھور، وزیادة القدرة",
-                    "sub": "على التغییر"
-                },
-                "develop": {
-                    "main": "تطویر الإمكانیات الإنتاجیة",
-                    "sub": "وسیاساتھا وضبط الإنفاق"
-                },
-                "strategicDirection": {
-                    "main": "تعزیز التوجھ الاستراتیجي في",
-                    "sub": "تعزیز التوجھ الاستراتیجي في"
-                }
-            },
-            "emailLabel": "الإيميل",
-            "emailRequired": "رجاءً أدخل البريد الإلكتروني",
-            "passwordLabel": "كلمة المرور",
-            "passwordRequired": "رجاءً أدخل كلمة المرور",
-            "submit": "تسجيل الدخول للموقع",
-            "newSubscriber": "مشترك جديد",
-            "newUser": "مستخدم جديد"
-        },
-        "signup": {
-            "title": "Create a New Account",
-            "name": "Full Name",
-            "email": "Email",
-            "success": {
-                "messageWithAction": "تمت عملية التسجيل بنجاح، يمكنكم تسجيل الدخول وتصفح الموقع وفقا",
-                "subscriptionAgreementAction": "لإتفاقية في خدمات المركز",
-                "login": "تسجیل الدخول للموقع",
-                "subscribe": "الاشتراك في خدمات المركز"
-            }
-        },
-        "subscriptionForm": {
-            "name": {
-                "firstName": "الاسم الأول",
-                "secondName": "الاسم الثاني",
-                "lastName": "الاسم الأخير",
-                "placeholder": "أدخل الاسم"
-            },
-            "subscriptionType": {
-                "label": "نوع الاشتراك",
-                "placeholder": "اختر نوع الاشتراك",
-                "individual": "فرد",
-                "organization": "مؤسسة"
-            },
-            "organizationName": {
-                "label": "اسم المؤسسة",
-                "placeholder": "أدخل اسم المؤسسة"
-            },
-            "subscriptionDuration": {
-                "label": "مدة الاشتراك (خصم ١٠٪ عند الاشتراك لسنتين)",
-                "placeholder": "اختر مدة الاشتراك",
-                "1year": "سنة",
-                "2years": "سنتان"
-            },
-            "email": {
-                "label": "البريد الإلكتروني",
-                "placeholder": "أدخل بريدك الإلكتروني"
-            },
-            "password": {
-                "label": "إنشاء كلمة المرور",
-                "placeholder": "أدخل كلمة المرور"
-            },
-            "confirmPassword": {
-                "label": "إعادة كلمة المرور",
-                "placeholder": "أعد إدخال كلمة المرور"
-            },
-            "mobileNumber": {
-                "label": "رقم الموبایل",
-                "placeholder": "أدخل رقم الموبایل"
-            },
-            "country": {
-                "label": "دولة المقر",
-                "placeholder": "اختر دولة المقر"
-            },
-            "countryList": {
-                "egypt": "مصر",
-                "saudiArabia": "السعودية",
-                "uae": "الإمارات",
-                "jordan": "الأردن",
-                "lebanon": "لبنان",
-                "syria": "سوريا",
-                "iraq": "العراق",
-                "yemen": "اليمن",
-                "oman": "عُمان",
-                "kuwait": "الكويت",
-                "bahrain": "البحرين",
-                "qatar": "قطر",
-                "palestine": "فلسطين"
-            },
-            "jobType": {
-                "jobRole": "وظيفة المشترك",
-                "selectJobRole": "اختر الوظيفة",
-                "jobs": "قائمة الوظائف",
-                "none": "بدون",
-                "other": "أخرى"
-            },
-            "nationality": {
-                "label": "الجنسية",
-                "placeholder": "اختر الجنسية"
-            },
-            "uploadImage": {
-                "label": "تحمیل صورة المشترك",
-                "placeholder": "اختر صورة"
-            },
-            "preferredContactMethod": {
-                "label": "الطریقة المفضلة للتواصل معكم",
-                "placeholder": "اختر طريقة التواصل",
-                "email": "البرید الإلكتروني",
-                "mobile": "الموبایل",
-                "whatsapp": "الواتساب"
-            },
-            "agreements": {
-                "confirmDataAccuracy": "أقر بصحة البیانات المدخلة.",
-                "read": "قرأت ",
-                "subscriptionTerms": "إتفاقية الشتراك في خدمات المركز، ",
-                "acceptTerms": "وأوافق على ما جاء فیھا.",
-                "notifyEvents": "أرغب في إشعاري بالفعالیات الجدیدة في المركز"
-            },
-            "submit": "إرسال",
-            "success": {
-                "message": "تمت عملية الاشتراك بنجاح. مرحبا بكم في قائمة المشتركین في المركز! الاشتراك في خدمات المركز.",
-                "messageWithAction": "یمكنكم الآن التمتع بمزایا الاشتراك الموضحة في",
-                "subscriptionAgreementAction": "اتفاقیة الاشتراك في خدمات المركز",
-                "login": "تسجیل الدخول للموقع",
-                "register": "تسجیل مستخدم جدید"
-            }
-        },
-        "validationMsg": {
-            "firstNameRequired": "يرجى إدخال الإسم الأول ",
-            "secondNameRequired": "يرجى إدخال الإسم الثاني ",
-            "lastNameRequired": "يرجى إدخال الإسم الثالث ",
-            "subscriptionTypeRequired": "نوع الاشتراك مطلوب",
-            "organizationNameRequired": "اسم المؤسسة مطلوب",
-            "subscriptionDurationRequired": "مدة الاشتراك مطلوبة",
-            "emailRequired": "البريد الإلكتروني مطلوب ويجب أن يكون صالحًا",
-            "passwordRequired": "كلمة المرور مطلوبة",
-            "confirmPasswordRequired": "يرجى تأكيد كلمة المرور",
-            "countryRequired": "يرجى اختيار دولة المقر",
-            "passwordsMustMatch": "كلمات المرور غير متطابقة",
-            "mobileNumberRequired": "رقم الموبایل مطلوب",
-            "phoneNumberRequired": "أدخل رقم الهاتف",
-            "preferredContactMethodRequired": "الطریقة المفضلة للتواصل مطلوبة",
-            "confirmDataRequired": "يجب عليك تأكيد صحة البيانات.",
-            "acceptTermsRequired": "يجب الموافقة على اتفاقية الاشتراك.",
-            "recaptchaRequired": "يرجى إكمال التحقق من reCAPTCHA"
-        }
+    "footer": {
+      "subscribe": "الاشتراك في خدمات المركز",
+      "signup": "تسجيل مستخدم جديد",
+      "login": "تسجيل الدخول للموقع",
+      "centerServiceAgreement": "اتفاقية الاشتراك في خدمات المركز",
+      "serviceAgreement": "اتفاقية الخدمة",
+      "privacyPolicy": "سياسة الخصوصية",
+      "contact": "اتصال",
+      "copyright": "جميع الحقوق محفوظة لمركز الإعلام الإستراتيجي 2025"
     },
-    "home": {
-        "title": "Welcome to Our Site",
-        "intro": "We specialize in strategic media planning."
-    },
-    "aboutus": {
-        "title": "About Us",
-        "description": "We specialize in strategic media planning."
-    },
-    "contact": {
-        "title": "Contact Us",
-        "description": "Feel free to reach out to us anytime."
-    },
-    "consulting": {
-        "heroText": {
-            "main": "معكم، نحو تهديف أدق، يقودكم إلي التميز والتفوق والريادة",
-            "sub": "ويضمن لكم الوصول إلي الجمهور المستهدف والتأثير فيه."
-        },
-        "servicesTitle": "يقدم المركز خدمات استشارية للدول ووزارات الإعلام والمؤسسات الإعلامية وغير الإعلامية، استشارات تأسيسية أو تطويرية، لمشروعاتها الإعلامية، تساعدها علي إقامة مشروعاتها علي أسس استراتيجية واضحة ومحددة، قادرى علي تحقيق مقاصدها وأهدافها تجاه الجمهور المستهدف، وفق سياسات السوق والمنافسة",
-        "linksTitle": "وفي مقدمة ھذه الاستشارات:",
-        "serviceNotFound": "هذة الخدمة غير متوفرة",
-        "loading": "تحميل.....",
-        "confidentialityStatement": "یلتزم المركز بالحفاظ على سریة المعلومات التي یتم تزویده بھا",
-        "received": {
-            "title": "تم استلام طلب الاستشارة",
-            "message": "شكرًا على تواصلكم معنا، سنقوم بدراسة طلبكم والتواصل معكم في مدة لا تزید عن یومي عمل.",
-            "requestAnother": "طلب استشارة أخرى"
-        },
-        "relatedConsultations": {
-            "title": "استشارات ذات صلة",
-            "item1": "الاستشارة ١",
-            "item2": "الاستشارة ٢",
-            "item3": "الاستشارة ٣"
-        },
-        "form": {
-            "numberOfEmployees": {
-                "label": "عدد الموظفين",
-                "placeholder": "اختر عدد الموظفين"
-            },
-            "numberOfOffices": {
-                "label": "عدد المكاتب",
-                "placeholder": "اختر عدد المكاتب"
-            },
-            "validationMsg": {
-                "numberOfEmployees": "يرجى اختيار عدد الموظفين",
-                "numberOfOffices": "يرجى اختيار عدد المكاتب",
-                "estimatedBudget": "يرجى اختيار الـموازنـة الـسنویـة الـتقدیـریـة",
-                "institutionChallenges": "يرجى اختيار المجالات التي تعاني منھا المؤسسة"
-            }
-        }
-    },
-    "training": {
-        "coursesTypes": {
-            "link": "أنواع الدورات",
-            "heroParagraph": "یـتمیز الـمركـز بـتقدیـم مجـموعـة مـن الـدورات الـتدریـبیة الـتي تـعمل عـلى تـعزیـز الـمعرفـة والـمھارات الاسـتراتـیجیة فـي تخـطیط وإدارةالعمل الإعلامي؛ یقدمھا مؤسس المركز ومجموعة الخبراء المتعاونین معه.",
-            "secondParagraph": "وتغطي الدورات جملة من الاحتیاجات الحیویة للمؤسسات الإعلامیة وغیر الإعلامیة.",
-            "points": {
-                "headTitle": "مـن الـمركـز عـلى نشـر ھـذه الـمعرفـة وتـعزیـز مـھارات الـكوادر الإعـلامـیة الـمعنیة والمھـتمة، فـإنـھ یـقدم نـوعـین مـن الـدوراتوحـرصـاعلى النحو التالي:",
-                "firstPointRemoteCoursesTitle": "(دورات عن بعد) ینظمھا المركز للأفراد برسوم مخففة غیر تجاریة.",
-                "secondPointPrivacyCourses": {
-                    "title": "(دورات خاصة) تطلبھا الجھات المستفیدة، وتكون على النحو التالي:",
-                    "first": "دورات عند بعد.",
-                    "second": "دورات حضورية (وجها لوجه)",
-                    "third": "دورات فردیة، یتم تصمیمھا خصيخصا للقادة والمدراء والمسؤلين.",
-                    "fourth": "دورات إضافیة (غیر موجودة في القائمة)."
-                }
-            },
-            "subscribeToRemoteCourse": "الإشتراك في دورة عن بعد",
-            "subscribeToPrivateCourse": "طلب دورة خاصة"
-        }
-    },
-    "notFound": {
-        "title": "الصفحة غير موجودة",
-        "description": "الصفحة التي تبحث عنها غير موجودة.",
-        "goBackHome": "العودة إلى الصفحة الرئيسية"
+    "breadcrumb": {
+      "consulting": {
+        "title": "الإستشارات",
+        "consultingDetails": "بطاقة بیانات الاستشارة",
+        "consultingRequest": "طلب إستشارة",
+        "consultingReceived": "استلام طلب الاستشارة"
+      },
+      "subscribe": {
+        "title": "الاشتراك في خدمات المركز",
+        "subscribeSuccess": "نجاح عملیة الاشتراك"
+      },
+      "signup": {
+        "title": "تسجیل مستخدم جدید للموقع",
+        "signupSuccess": "نجاح عملية التسجيل"
+      },
+      "training": {
+        "title": "التدريب",
+        "courses": "الدورات",
+        "subscribeToRemoteCourse": "الإشتراك في دورة عن بعد",
+        "coursesTypes": "أنواع الدورات",
+        "subscribeToPrivateCourse": "طلب دورة خاصة",
+        "feePayment": "تسديد الرسوم",
+        "courseDetails": "بطاقة بيانات الدورة",
+        "expertDetails": "بطاقة بيانات الخبير"
+      }
     }
+  },
+  "auth": {
+    "login": {
+      "sidebarTitle": "مرحبا، نحن هنا لمساعدتك في:",
+      "sidebarContent": {
+        "plan": {
+          "main": "تخطيط مشروعك الإعلامية",
+          "sub": "وإدارتها علي أسس استراتيجية."
+        },
+        "define": {
+          "main": "تحديد الأهداف العليا وضمان إنتاج",
+          "sub": "المحتوي الإعلامي الذي يحققها."
+        },
+        "enhance": {
+          "main": "تعزیز القدرات التنافسیة والوصول",
+          "sub": "إلى الجمھور المستھدف"
+        },
+        "Understand": {
+          "main": "فھم الجمھور ومیولھ وبيئته",
+          "sub": "واحتیاجاته، وكیفیة الوصول إليه"
+        },
+        "influence": {
+          "main": "التأثیر في الجمھور، وزیادة القدرة",
+          "sub": "على التغییر"
+        },
+        "develop": {
+          "main": "تطویر الإمكانیات الإنتاجیة",
+          "sub": "وسیاساتھا وضبط الإنفاق"
+        },
+        "strategicDirection": {
+          "main": "تعزیز التوجھ الاستراتیجي في",
+          "sub": "تعزیز التوجھ الاستراتیجي في"
+        }
+      },
+      "emailLabel": "الإيميل",
+      "emailRequired": "رجاءً أدخل البريد الإلكتروني",
+      "passwordLabel": "كلمة المرور",
+      "passwordRequired": "رجاءً أدخل كلمة المرور",
+      "submit": "تسجيل الدخول للموقع",
+      "newSubscriber": "مشترك جديد",
+      "newUser": "مستخدم جديد"
+    },
+    "signup": {
+      "title": "Create a New Account",
+      "name": "Full Name",
+      "email": "Email",
+      "success": {
+        "messageWithAction": "تمت عملية التسجيل بنجاح، يمكنكم تسجيل الدخول وتصفح الموقع وفقا",
+        "subscriptionAgreementAction": "لإتفاقية في خدمات المركز",
+        "login": "تسجیل الدخول للموقع",
+        "subscribe": "الاشتراك في خدمات المركز"
+      }
+    },
+    "subscriptionForm": {
+      "name": {
+        "firstName": "الاسم الأول",
+        "secondName": "الاسم الثاني",
+        "lastName": "الاسم الأخير",
+        "placeholder": "أدخل الاسم"
+      },
+      "subscriptionType": {
+        "label": "نوع الاشتراك",
+        "placeholder": "اختر نوع الاشتراك",
+        "individual": "فرد",
+        "organization": "مؤسسة"
+      },
+      "organizationName": {
+        "label": "اسم المؤسسة",
+        "placeholder": "أدخل اسم المؤسسة"
+      },
+      "subscriptionDuration": {
+        "label": "مدة الاشتراك (خصم ١٠٪ عند الاشتراك لسنتين)",
+        "placeholder": "اختر مدة الاشتراك",
+        "1year": "سنة",
+        "2years": "سنتان"
+      },
+      "email": {
+        "label": "البريد الإلكتروني",
+        "placeholder": "أدخل بريدك الإلكتروني"
+      },
+      "password": {
+        "label": "إنشاء كلمة المرور",
+        "placeholder": "أدخل كلمة المرور"
+      },
+      "confirmPassword": {
+        "label": "إعادة كلمة المرور",
+        "placeholder": "أعد إدخال كلمة المرور"
+      },
+      "mobileNumber": {
+        "label": "رقم الموبایل",
+        "placeholder": "أدخل رقم الموبایل"
+      },
+      "country": {
+        "label": "دولة المقر",
+        "placeholder": "اختر دولة المقر"
+      },
+      "countryList": {
+        "egypt": "مصر",
+        "saudiArabia": "السعودية",
+        "uae": "الإمارات",
+        "jordan": "الأردن",
+        "lebanon": "لبنان",
+        "syria": "سوريا",
+        "iraq": "العراق",
+        "yemen": "اليمن",
+        "oman": "عُمان",
+        "kuwait": "الكويت",
+        "bahrain": "البحرين",
+        "qatar": "قطر",
+        "palestine": "فلسطين"
+      },
+      "jobType": {
+        "jobRole": "وظيفة المشترك",
+        "selectJobRole": "اختر الوظيفة",
+        "jobs": "قائمة الوظائف",
+        "none": "بدون",
+        "other": "أخرى"
+      },
+      "nationality": {
+        "label": "الجنسية",
+        "placeholder": "اختر الجنسية"
+      },
+      "uploadImage": {
+        "label": "تحمیل صورة المشترك",
+        "placeholder": "اختر صورة"
+      },
+      "preferredContactMethod": {
+        "label": "الطریقة المفضلة للتواصل معكم",
+        "placeholder": "اختر طريقة التواصل",
+        "email": "البرید الإلكتروني",
+        "mobile": "الموبایل",
+        "whatsapp": "الواتساب"
+      },
+      "agreements": {
+        "confirmDataAccuracy": "أقر بصحة البیانات المدخلة.",
+        "read": "قرأت ",
+        "subscriptionTerms": "إتفاقية الشتراك في خدمات المركز، ",
+        "acceptTerms": "وأوافق على ما جاء فیھا.",
+        "notifyEvents": "أرغب في إشعاري بالفعالیات الجدیدة في المركز"
+      },
+      "submit": "إرسال",
+      "success": {
+        "message": "تمت عملية الاشتراك بنجاح. مرحبا بكم في قائمة المشتركین في المركز! الاشتراك في خدمات المركز.",
+        "messageWithAction": "یمكنكم الآن التمتع بمزایا الاشتراك الموضحة في",
+        "subscriptionAgreementAction": "اتفاقیة الاشتراك في خدمات المركز",
+        "login": "تسجیل الدخول للموقع",
+        "register": "تسجیل مستخدم جدید"
+      }
+    },
+    "validationMsg": {
+      "firstNameRequired": "يرجى إدخال الإسم الأول ",
+      "secondNameRequired": "يرجى إدخال الإسم الثاني ",
+      "lastNameRequired": "يرجى إدخال الإسم الثالث ",
+      "subscriptionTypeRequired": "نوع الاشتراك مطلوب",
+      "organizationNameRequired": "اسم المؤسسة مطلوب",
+      "subscriptionDurationRequired": "مدة الاشتراك مطلوبة",
+      "emailRequired": "البريد الإلكتروني مطلوب ويجب أن يكون صالحًا",
+      "passwordRequired": "كلمة المرور مطلوبة",
+      "confirmPasswordRequired": "يرجى تأكيد كلمة المرور",
+      "countryRequired": "يرجى اختيار دولة المقر",
+      "passwordsMustMatch": "كلمات المرور غير متطابقة",
+      "mobileNumberRequired": "رقم الموبایل مطلوب",
+      "phoneNumberRequired": "أدخل رقم الهاتف",
+      "preferredContactMethodRequired": "الطریقة المفضلة للتواصل مطلوبة",
+      "confirmDataRequired": "يجب عليك تأكيد صحة البيانات.",
+      "acceptTermsRequired": "يجب الموافقة على اتفاقية الاشتراك.",
+      "recaptchaRequired": "يرجى إكمال التحقق من reCAPTCHA"
+    }
+  },
+  "home": {
+    "title": "Welcome to Our Site",
+    "intro": "We specialize in strategic media planning."
+  },
+  "aboutus": {
+    "title": "About Us",
+    "description": "We specialize in strategic media planning."
+  },
+  "contact": {
+    "title": "Contact Us",
+    "description": "Feel free to reach out to us anytime."
+  },
+  "consulting": {
+    "heroText": {
+      "main": "معكم، نحو تهديف أدق، يقودكم إلي التميز والتفوق والريادة",
+      "sub": "ويضمن لكم الوصول إلي الجمهور المستهدف والتأثير فيه."
+    },
+    "servicesTitle": "يقدم المركز خدمات استشارية للدول ووزارات الإعلام والمؤسسات الإعلامية وغير الإعلامية، استشارات تأسيسية أو تطويرية، لمشروعاتها الإعلامية، تساعدها علي إقامة مشروعاتها علي أسس استراتيجية واضحة ومحددة، قادرى علي تحقيق مقاصدها وأهدافها تجاه الجمهور المستهدف، وفق سياسات السوق والمنافسة",
+    "linksTitle": "وفي مقدمة ھذه الاستشارات:",
+    "serviceNotFound": "هذة الخدمة غير متوفرة",
+    "loading": "تحميل.....",
+    "confidentialityStatement": "یلتزم المركز بالحفاظ على سریة المعلومات التي یتم تزویده بھا",
+    "received": {
+      "title": "تم استلام طلب الاستشارة",
+      "message": "شكرًا على تواصلكم معنا، سنقوم بدراسة طلبكم والتواصل معكم في مدة لا تزید عن یومي عمل.",
+      "requestAnother": "طلب استشارة أخرى"
+    },
+    "relatedConsultations": {
+      "title": "استشارات ذات صلة",
+      "item1": "الاستشارة ١",
+      "item2": "الاستشارة ٢",
+      "item3": "الاستشارة ٣"
+    },
+    "form": {
+      "numberOfEmployees": {
+        "label": "عدد الموظفين",
+        "placeholder": "اختر عدد الموظفين"
+      },
+      "numberOfOffices": {
+        "label": "عدد المكاتب",
+        "placeholder": "اختر عدد المكاتب"
+      },
+      "validationMsg": {
+        "numberOfEmployees": "يرجى اختيار عدد الموظفين",
+        "numberOfOffices": "يرجى اختيار عدد المكاتب",
+        "estimatedBudget": "يرجى اختيار الـموازنـة الـسنویـة الـتقدیـریـة",
+        "institutionChallenges": "يرجى اختيار المجالات التي تعاني منھا المؤسسة"
+      }
+    }
+  },
+  "training": {
+    "coursesTypes": {
+      "link": "أنواع الدورات",
+      "heroParagraph": "یـتمیز الـمركـز بـتقدیـم مجـموعـة مـن الـدورات الـتدریـبیة الـتي تـعمل عـلى تـعزیـز الـمعرفـة والـمھارات الاسـتراتـیجیة فـي تخـطیط وإدارةالعمل الإعلامي؛ یقدمھا مؤسس المركز ومجموعة الخبراء المتعاونین معه.",
+      "secondParagraph": "وتغطي الدورات جملة من الاحتیاجات الحیویة للمؤسسات الإعلامیة وغیر الإعلامیة.",
+      "points": {
+        "headTitle": "مـن الـمركـز عـلى نشـر ھـذه الـمعرفـة وتـعزیـز مـھارات الـكوادر الإعـلامـیة الـمعنیة والمھـتمة، فـإنـھ یـقدم نـوعـین مـن الـدوراتوحـرصـاعلى النحو التالي:",
+        "firstPointRemoteCoursesTitle": "(دورات عن بعد) ینظمھا المركز للأفراد برسوم مخففة غیر تجاریة.",
+        "secondPointPrivacyCourses": {
+          "title": "(دورات خاصة) تطلبھا الجھات المستفیدة، وتكون على النحو التالي:",
+          "first": "دورات عند بعد.",
+          "second": "دورات حضورية (وجها لوجه)",
+          "third": "دورات فردیة، یتم تصمیمھا خصيخصا للقادة والمدراء والمسؤلين.",
+          "fourth": "دورات إضافیة (غیر موجودة في القائمة)."
+        }
+      },
+      "subscribeToRemoteCourse": "الإشتراك في دورة عن بعد",
+      "subscribeToPrivateCourse": "طلب دورة خاصة"
+    },
+    "payment": {
+      "checkboxMessage": "أرغب في الاشتراك في الدورة/الدورات الواردة في الجدول في التواريخ المحددة لنعقادها.",
+      "submitPayment": "تسديد رسوم الاشتراك"
+    },
+    "courseDetails": {
+      "highlightMessage": "البيانات التي تظهر للمستخدم عند النقر على عنوان الدورة في الجدول.",
+      "courseTitle": "عنوان الدورة",
+      "specialization": "تخصص الدورة",
+      "goal": "الهدف العام للدورة",
+      "mainTitle": "المحاور الرئيسية المكتسبة",
+      "subTitles": "المعارف الرئيسية المكتسبة",
+      "annualSchedule": "موعد انعقاد الدورة سنوياً",
+      "trainerName": "مدرب الدورة:",
+      "relatedServices": "خدمات أخرى ذات صلة",
+      "subscribeButton": "الاشتراك في دورة عن بعد",
+      "cancelSubscription": "إلغاء الاشتراك في الدورة"
+    },
+    "expertDetails": {
+      "highlight": "البيانات التي تظهر للمستخدم عند النقر على الخبير أو المدرب.",
+      "name": "الاسم",
+      "shortBio": "نبذة تعریفیة مختصرة",
+      "currentPosition": "الوظیفة الحالیة",
+      "previousPositions": "الوظائف الرئیسیة السابقة",
+      "keyWorkExperience": "الخبرات العملیة الرئیسیة",
+      "mainTrainingCourses": "الدورات التدریبیة الرئیسیة",
+      "academicQualifications": "المؤھلات الأكادیمیة",
+      "researchStudies": "البحوث والدراسات",
+      "subscribeToRemoteCourse": "الاشتراك في دورة عن بعد",
+      "subscribeToPrivateCourse": "طلب دورة خاصة",
+      "cancelSubscription": "إلغاء الاشتراك في الدورة"
+    }
+  },
+  "notFound": {
+    "title": "الصفحة غير موجودة",
+    "description": "الصفحة التي تبحث عنها غير موجودة.",
+    "goBackHome": "العودة إلى الصفحة الرئيسية"
+  }
 }

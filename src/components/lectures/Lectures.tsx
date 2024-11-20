@@ -4,40 +4,55 @@ import { useTranslations } from "next-intl";
 import PageWrapper from "../PageWrapper";
 import { HighlightSection } from "../shared/HighlightSection";
 
-export default function Training() {
+export default function Lectures() {
   const tBreadcrumb = useTranslations("common");
-  const tTraining = useTranslations("training");
+  const tLectures = useTranslations("lectures");
   return (
     <PageWrapper sidebarContent={undefined} sidebarTitle={undefined}>
       <HighlightSection
-        title={tBreadcrumb("links.training")}
-        linkHref="/training/courses/types"
-        linkText={tTraining("coursesTypes.link")}
+        title={tBreadcrumb("links.lectures")}
+        linkHref="/lectures/types"
+        linkText={tLectures("lectureTyps.link")}
         content={
           <>
             <span className="text-lg font-semibold underline underline-offset-4">
-              اختصر الطريق،
+              نحو
             </span>
             <span className="text-lg font-semibold underline underline-offset-4">
-              واقطع مسافة
+              فهم أعمق
             </span>
             <span className="text-lg font-semibold underline underline-offset-4">
-              الألف ميل بخطوة
+              لحتياجات
             </span>
             <span className="text-lg font-semibold underline underline-offset-4">
-              واحدة، نحو
+              العلم
             </span>
             <span className="text-lg font-semibold underline underline-offset-4">
-              العارف والهارات
+              والإتصال،
             </span>
             <span className="text-lg font-semibold underline underline-offset-4">
-              التي تحتاجها،
+              وأدوار كل
             </span>
             <span className="text-lg font-semibold underline underline-offset-4">
-              للتميز والنافسة
+              منهما،
             </span>
             <span className="text-lg font-semibold underline underline-offset-4">
-              والوصول.
+              وظواهره،
+            </span>
+            <span className="text-lg font-semibold underline underline-offset-4">
+              ونتائجه،
+            </span>
+            <span className="text-lg font-semibold underline underline-offset-4">
+              وآثاره،
+            </span>
+            <span className="text-lg font-semibold underline underline-offset-4">
+              لتصحيح
+            </span>
+            <span className="text-lg font-semibold underline underline-offset-4">
+              السار، وتحقيق
+            </span>
+            <span className="text-lg font-semibold underline underline-offset-4">
+              الغايات.
             </span>
           </>
         }

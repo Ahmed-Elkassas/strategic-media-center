@@ -1,5 +1,5 @@
 import OnlineCourseSubscription from "@/components/training/OnlineCourseSubscription";
 
-export default function CoursesPage() {
+export default function OnlineCourseSubscriptionPage() {
   return <OnlineCourseSubscription />;
 }

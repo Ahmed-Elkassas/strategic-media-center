@@ -45,9 +45,31 @@
         "coursesTypes": "أنواع الدورات",
         "subscribeToPrivateCourse": "طلب دورة خاصة",
         "feePayment": "تسديد الرسوم",
-        "courseDetails": "بطاقة بيانات الدورة",
-        "expertDetails": "بطاقة بيانات الخبير"
+        "courseDetails": "بطاقة بيانات الدورة"
+
+      },
+      "lectures": {
+        "title": "المحاضرات",
+        "lectureTyps": "أنواع المحاضرات",
+        "subscribeToRemoteLecture": "الإشتراك في محاضرة عن بعد",
+        "subscribeToPrivateLecture": "طلب محاضرة خاصة",
+        "feePayment": "تسديد الرسوم",
+        "lectureDetails": "بطاقة بيانات المحاضرة"
+
       }
+    },
+    "expertDetails": {
+      "title": "بطاقة بيانات الخبير",
+
+      "highlight": "البيانات التي تظهر للمستخدم عند النقر على الخبير أو المدرب.",
+      "name": "الاسم",
+      "shortBio": "نبذة تعریفیة مختصرة",
+      "currentPosition": "الوظیفة الحالیة",
+      "previousPositions": "الوظائف الرئیسیة السابقة",
+      "keyWorkExperience": "الخبرات العملیة الرئیسیة",
+      "mainTrainingCourses": "الدورات التدریبیة الرئیسیة",
+      "academicQualifications": "المؤھلات الأكادیمیة",
+      "researchStudies": "البحوث والدراسات"
     }
   },
   "auth": {
@@ -303,20 +325,51 @@
       "relatedServices": "خدمات أخرى ذات صلة",
       "subscribeButton": "الاشتراك في دورة عن بعد",
       "cancelSubscription": "إلغاء الاشتراك في الدورة"
-    },
-    "expertDetails": {
-      "highlight": "البيانات التي تظهر للمستخدم عند النقر على الخبير أو المدرب.",
-      "name": "الاسم",
-      "shortBio": "نبذة تعریفیة مختصرة",
-      "currentPosition": "الوظیفة الحالیة",
-      "previousPositions": "الوظائف الرئیسیة السابقة",
-      "keyWorkExperience": "الخبرات العملیة الرئیسیة",
-      "mainTrainingCourses": "الدورات التدریبیة الرئیسیة",
-      "academicQualifications": "المؤھلات الأكادیمیة",
-      "researchStudies": "البحوث والدراسات",
+    }
+ ,
+    "expertDetails" : {
       "subscribeToRemoteCourse": "الاشتراك في دورة عن بعد",
       "subscribeToPrivateCourse": "طلب دورة خاصة",
       "cancelSubscription": "إلغاء الاشتراك في الدورة"
+    }
+  },
+  "lectures": {
+    "lectureTyps": {
+      "link": "أنواع المحاضرات",
+      "heroParagraph": "عـلى زیـادة نشـر ثـقافـة التخـطیط الاسـتراتـیجي والإدارة الاسـتراتـیجیة لـلعمل الإعـلامـي، وتـعمیق فـھم الـناس لـھا، وإیـمانـھمحـرصـابـأھـمیتھا، وتـحفیزھـم عـلى تـطبیقھا فـي مـؤسـساتـھم ومشـروعـاتـھم؛ یـنظم الـمركـز مـحاضـرات مـتخصصة فـي مـجالـي الإعـلاموالاتصال المؤسسي یقدمھا مؤسس المركز وعدد من الخبراء والمختصین الذین یستضیفھم المركز لھذا الغرض.",
+      "points": {
+        "headTitle": "وحرصا من المركز على نشر ھذه المعرفة ونقل مھاراتھا، فإنھ یقدم المحاضرات على نوعین:",
+        "firstPointRemoteCoursesTitle": "(محاضرات عن بعد) ینظمھا المركز للأفراد برسوم رمزیة",
+        "secondPointPrivacyCourses": {
+          "title": "(محاضرات خاصة) تطلبھا الجھات المستفیدة، وتكون على النحو التالي:",
+          "first": "محاضرات عند بعد.",
+          "second": "محاضرات حضوریة (وجها لوجه)",
+          "third": "محاضرات فردیة، یتم تصمیمھا خصیصا للقادة والمدراء والمسؤلين",
+          "fourth": "محاضرات إضافیة (غیر موجودة في القائمة)."
+        }
+      },
+      "subscribeToRemoteCourse": "الإشتراك في محاضرة عن بعد",
+      "subscribeToPrivateCourse": "طلب محاضرة خاصة"
+    },
+    "details": {
+      "lectureDetailsTitle": "بطاقة بيانات المحاضرة",
+      "lectureTitle": "عنوان المحاضرة:",
+      "specialization": "تخصص المحاضرة:",
+      "goal": "الهدف العام للمحاضرة:",
+      "mainTitle": "المحاور الرئيسية للمحاضرة:",
+      "subTitles": "محاور تقييم المحاضرة:",
+      "annualSchedule": "مواعيد انعقاد المحاضرة سنوياً:",
+      "trainerName": "اسم المحاضر:",
+      "relatedLectures": "محاضرات أخرى ذات صلة:",
+      "relatedServices": "خدمات أخرى ذات صلة:",
+      "subscribeToLecture": "الاشتراك في المحاضرة",
+      "requestPrivateLecture": "طلب محاضرة خاصة",
+      "cancelSubscription": "إلغاء الاشتراك"
+    },
+    "expertDetails" : {
+      "subscribeToRemoteCourse": "الاشتراك في محاضرة عن بعد",
+      "subscribeToPrivateCourse": "طلب محاضرة خاصة",
+      "cancelSubscription": "إلغاء الاشتراك في المحاضرة"
     }
   },
   "notFound": {

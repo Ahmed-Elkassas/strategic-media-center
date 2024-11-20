@@ -1,5 +1,5 @@
 import CourseTypes from "@/components/training/CourseTypes";
 
-export default function TrainingPage() {
+export default function CourseTypesPage() {
   return <CourseTypes />;
 }

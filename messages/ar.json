@@ -46,7 +46,6 @@
         "subscribeToPrivateCourse": "طلب دورة خاصة",
         "feePayment": "تسديد الرسوم",
         "courseDetails": "بطاقة بيانات الدورة"
-
       },
       "lectures": {
         "title": "المحاضرات",
@@ -55,12 +54,32 @@
         "subscribeToPrivateLecture": "طلب محاضرة خاصة",
         "feePayment": "تسديد الرسوم",
         "lectureDetails": "بطاقة بيانات المحاضرة"
-
+      },
+      "studies": {
+        "title": "الدراسات",
+        "studiesList": "قائمة الدراسات",
+        "subscribeToRemoteLecture": "الإشتراك في محاضرة عن بعد",
+        "subscribeToPrivateLecture": "طلب محاضرة خاصة",
+        "feePayment": "تسديد الرسوم",
+        "materialDetails": "بطاقة بيانات المادة",
+        "uploadMaterial": "تحميل مادة للنشر في المركز",
+        "materialReceived": "استلام المادة"
+      },
+      "opinionPolls": {
+        "title": "قياس الرأي",
+        "opinionPollsTypes": "أنواع قياسات الرأي",
+        "openOpinionPolls": "بطاقة بيانات قياس الرأي"
+      },
+      "forums": {
+        "title": "منتدیات الحوار",
+        "details": "بطاقة بیانات منتدى الحوار"
+      },
+      "news": {
+        "title": "أخبار المركز"
       }
     },
     "expertDetails": {
       "title": "بطاقة بيانات الخبير",
-
       "highlight": "البيانات التي تظهر للمستخدم عند النقر على الخبير أو المدرب.",
       "name": "الاسم",
       "shortBio": "نبذة تعریفیة مختصرة",
@@ -325,9 +344,8 @@
       "relatedServices": "خدمات أخرى ذات صلة",
       "subscribeButton": "الاشتراك في دورة عن بعد",
       "cancelSubscription": "إلغاء الاشتراك في الدورة"
-    }
- ,
-    "expertDetails" : {
+    },
+    "expertDetails": {
       "subscribeToRemoteCourse": "الاشتراك في دورة عن بعد",
       "subscribeToPrivateCourse": "طلب دورة خاصة",
       "cancelSubscription": "إلغاء الاشتراك في الدورة"
@@ -366,10 +384,94 @@
       "requestPrivateLecture": "طلب محاضرة خاصة",
       "cancelSubscription": "إلغاء الاشتراك"
     },
-    "expertDetails" : {
+    "expertDetails": {
       "subscribeToRemoteCourse": "الاشتراك في محاضرة عن بعد",
       "subscribeToPrivateCourse": "طلب محاضرة خاصة",
       "cancelSubscription": "إلغاء الاشتراك في المحاضرة"
+    },
+    "subscribeConfirmation": "أرغب في الاشتراك في المحاضرة/ المحاضرات الواردة في الجدول في التواريخ المحددة لانعقادها.",
+    "payFees": "تسديد رسوم الاشتراك",
+    "discount": "الخصم",
+    "total": "المجموع"
+  },
+  "studies": {
+    "heroContent": {
+      "line1": "نأخذك إلى بؤرة العرفة، وبوتقة الخبرة",
+      "line2": "والتجربة، حيث التابعة والقارنة والقياس",
+      "line3": "والتحليل والستنتاج، مع الخبراء",
+      "line4": ",والمتخصصين في علوم الإعلام والإتصال."
+    },
+    "studiesList": {
+      "description": "يضم هذا القسم الدراسات التي يبحث بها الخبراء والباحثون المركز، وتمت إجازتها للنشر من قبل اللجنة الفنية المختصة، وعلى وجه الخصوص ما يتعلق بالتخطيط الإستراتيجي للمؤسسات الإعلامية، والمحتوى الإعلامي والأعمال الاتصالية، وإدارتها.",
+      "requestCustomStudy": "طلب دراسة خاصة",
+      "table": {
+        "title": "العنوان",
+        "author": "المؤلف/الباحث",
+        "pages": "عدد الصفحات",
+        "publishDate": "تاريخ النشر",
+        "download": "تنزيل الملخص"
+      }
+    },
+    "materialDetails": {
+      "type": "نوع المادة",
+      "author": "المؤلف",
+      "specialization": "التخصص",
+      "summary": "المضمون",
+      "sourceCountry": "مرجع أو الدول",
+      "relatedTopics": "مواضيع ذات صلة",
+      "downloadMaterial": "تحميل مادة للنشر",
+      "loginToAccess": "تسجيل الدخول"
+    },
+    "receivedMaterial": "شكرا لكم، وصلتنا المادة، وسنقوم بعرضھا على اللجنة الفنیة المختصة للمراجعة والإجازة، وإفادتكم بالنتیجة"
+  },
+  "opinionPolls": {
+    "measurementsOfOpinionConquest": "قياسات الرأي الفتوحة",
+    "requestForMeasurementOfPrivateOpinion": "طلب قياس رأي خاص",
+    "opinionDetails": {
+      "title": "بطاقة بيانات قياس الرأي",
+      "topic": "الموضوع",
+      "field": "المجال",
+      "targetGroup": "الشريحة المستهدفة",
+      "geographicScope": "النطاق الجغرافي للشريحة المستهدفة",
+      "participants": "عدد المشاركين",
+      "duration": "مدة قياس الرأي",
+      "relatedPolls": "قياسات رأي ذات صلة",
+      "relatedServices": "خدمات أخرى ذات صلة"
+    }
+  },
+  "forums": {
+    "details": {
+      "detailsHeader": "البيانات التي تظهر عند النقر على عنوان منتدى الحوار في الجدول",
+      "title": "العنوان",
+      "topic": "الموضوع",
+      "domain": "المجال",
+      "participantsCount": "عدد المشاركين",
+      "creationDate": "تاريخ الإنشاء",
+      "relatedSurveys": "قياسات رأي ذات صلة",
+      "relatedServices": "خدمات أخرى ذات صلة",
+      "joinForum": "شارك في الحوار",
+      "backToList": "قائمة منتديات الحوار"
+    }
+  },
+  "news": {
+    "home": "الرئيسية",
+    "centerNews": "أخبار المركز",
+    "mainNewsTitle": "عنوان الخبر الرئيسي",
+    "newsSummaryPoint1": "ملخص الخبر - النقطة الأولى",
+    "newsSummaryPoint2": "ملخص الخبر - النقطة الثانية",
+    "newsSummaryPoint3": "ملخص الخبر - النقطة الثالثة",
+    "newsSummaryPoint4": "ملخص الخبر - النقطة الرابعة",
+    "newsSummaryPoint5": "ملخص الخبر - النقطة الخامسة",
+    "newsSummaryPoint6": "ملخص الخبر - النقطة السادسة",
+    "newsSummaryPoint7": "ملخص الخبر - النقطة السابعة",
+    "detailsButton": "تفاصيل",
+    "details": {
+      "newsDetails": "عنوان الخبر - يوم وتاريخ الخبر",
+      "newsTitle": "عنوان الخبر - عنوان الخبر - عنوان الخبر",
+      "newsAuthor": "اسم المحرر",
+      "newsDate": "يوم وتاريخ الخبر",
+      "imageCaption": "عنوان الصورة",
+      "newsContent": "نص الخبر"
     }
   },
   "notFound": {

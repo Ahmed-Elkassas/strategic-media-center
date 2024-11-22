@@ -138,37 +138,37 @@ export default function HomePageHeader() {
                   </Link>
                 </li>
                 <li className="lg:border-e-2 lg:px-2">
-                  <Link href="#" className="text-sm hover:text-gray-300">
+                  <Link href="/" className="text-sm hover:text-gray-300">
                     منهجية العمل
                   </Link>
                 </li>
                 <li className="lg:border-e-2 lg:px-2">
-                  <Link href="#" className="text-sm hover:text-gray-300">
+                  <Link href="/lectures" className="text-sm hover:text-gray-300">
                     {t("lectures")}
                   </Link>
                 </li>
                 <li className="lg:border-e-2 lg:px-2">
-                  <Link href="#" className="text-sm hover:text-gray-300">
+                  <Link href="/training" className="text-sm hover:text-gray-300">
                     دورات
                   </Link>
                 </li>
                 <li className="lg:border-e-2 lg:px-2">
-                  <Link href="#" className="text-sm hover:text-gray-300">
+                  <Link href="/studies" className="text-sm hover:text-gray-300">
                     {t("seminars")}
                   </Link>
                 </li>
                 <li className="lg:border-e-2 lg:px-2">
-                  <Link href="#" className="text-sm hover:text-gray-300">
+                  <Link href="/opinion-polls" className="text-sm hover:text-gray-300">
                     {t("opinionPolls")}
                   </Link>
                 </li>
                 <li className="lg:border-e-2 lg:px-2">
-                  <Link href="#" className="text-sm hover:text-gray-300">
+                  <Link href="/forums" className="text-sm hover:text-gray-300">
                     {t("forums")}
                   </Link>
                 </li>
                 <li className="">
-                  <Link href="#" className="text-sm hover:text-gray-300">
+                  <Link href="/news" className="text-sm hover:text-gray-300">
                     {t("news")}
                   </Link>
                 </li>

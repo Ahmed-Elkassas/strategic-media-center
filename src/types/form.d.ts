@@ -73,3 +73,16 @@ export interface PrivateCourseSubscriptionFormValues {
   requestDate: string; // Auto-filled date
   confirmDataAccuracy: boolean; // Checkbox for data accuracy confirmation
 }
+
+
+export interface UploadMaterialFormValues {
+  materialType: string;
+  authorName: string;
+  mobileNumber: string;
+  email: string;
+  materialSpecialization: string
+  materialSummary: string
+  firstPublicationDate: string
+  upload?: string
+  otherAuthors?: string
+}

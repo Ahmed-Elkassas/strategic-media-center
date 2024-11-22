@@ -68,7 +68,14 @@
       "opinionPolls": {
         "title": "قياس الرأي",
         "opinionPollsTypes": "أنواع قياسات الرأي",
-        "openOpinionPolls":  "بطاقة بيانات قياس الرأي"
+        "openOpinionPolls": "بطاقة بيانات قياس الرأي"
+      },
+      "forums": {
+        "title": "منتدیات الحوار",
+        "details": "بطاقة بیانات منتدى الحوار"
+      },
+      "news": {
+        "title": "أخبار المركز"
       }
     },
     "expertDetails": {
@@ -430,6 +437,41 @@
       "duration": "مدة قياس الرأي",
       "relatedPolls": "قياسات رأي ذات صلة",
       "relatedServices": "خدمات أخرى ذات صلة"
+    }
+  },
+  "forums": {
+    "details": {
+      "detailsHeader": "البيانات التي تظهر عند النقر على عنوان منتدى الحوار في الجدول",
+      "title": "العنوان",
+      "topic": "الموضوع",
+      "domain": "المجال",
+      "participantsCount": "عدد المشاركين",
+      "creationDate": "تاريخ الإنشاء",
+      "relatedSurveys": "قياسات رأي ذات صلة",
+      "relatedServices": "خدمات أخرى ذات صلة",
+      "joinForum": "شارك في الحوار",
+      "backToList": "قائمة منتديات الحوار"
+    }
+  },
+  "news": {
+    "home": "الرئيسية",
+    "centerNews": "أخبار المركز",
+    "mainNewsTitle": "عنوان الخبر الرئيسي",
+    "newsSummaryPoint1": "ملخص الخبر - النقطة الأولى",
+    "newsSummaryPoint2": "ملخص الخبر - النقطة الثانية",
+    "newsSummaryPoint3": "ملخص الخبر - النقطة الثالثة",
+    "newsSummaryPoint4": "ملخص الخبر - النقطة الرابعة",
+    "newsSummaryPoint5": "ملخص الخبر - النقطة الخامسة",
+    "newsSummaryPoint6": "ملخص الخبر - النقطة السادسة",
+    "newsSummaryPoint7": "ملخص الخبر - النقطة السابعة",
+    "detailsButton": "تفاصيل",
+    "details": {
+      "newsDetails": "عنوان الخبر - يوم وتاريخ الخبر",
+      "newsTitle": "عنوان الخبر - عنوان الخبر - عنوان الخبر",
+      "newsAuthor": "اسم المحرر",
+      "newsDate": "يوم وتاريخ الخبر",
+      "imageCaption": "عنوان الصورة",
+      "newsContent": "نص الخبر"
     }
   },
   "notFound": {

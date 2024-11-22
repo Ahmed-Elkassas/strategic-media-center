@@ -46,11 +46,7 @@ export default function Navbar() {
               {t("aboutus")}
             </Link>
           </li>
-          <li className="lg:border-e-2 lg:pe-2 font-normal text-lg">
-            <Link href="/philosophy" className="text-sm hover:text-gray-300">
-              {t("philosophy")}
-            </Link>
-          </li>
+
           <li className="lg:border-e-2 lg:pe-2 font-normal text-lg">
             <Link href="/consulting" className="text-sm hover:text-gray-300">
               {t("consulting")}

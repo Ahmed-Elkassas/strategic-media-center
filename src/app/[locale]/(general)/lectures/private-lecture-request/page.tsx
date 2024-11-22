@@ -1,18 +1,17 @@
 import PrivateTypeSubscription from "@/components/shared/PrivateTypeSubscription";
 import {useTranslations} from "next-intl";
 
-
-export default function PrivateCourseRequestPage() {
+export default function PrivateLectureRequestPage() {
 
   const tBreadcrumb = useTranslations("common.breadcrumb");
 
   const breadcrumbItems = [
     {
-      title: tBreadcrumb("training.title"),
-      href: "/training",
+      title: tBreadcrumb("lectures.title"),
+      href: "/lectures",
     },
     {
-      title: tBreadcrumb("training.subscribeToPrivateCourse"),
+      title: tBreadcrumb("lectures.subscribeToPrivateLecture"),
     },
   ];
 

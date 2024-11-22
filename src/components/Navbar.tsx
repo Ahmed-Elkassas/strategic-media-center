@@ -67,27 +67,27 @@ export default function Navbar() {
             </Link>
           </li>
           <li className="lg:border-e-2 lg:pe-2 font-normal text-lg">
-            <Link href="#" className="text-sm hover:text-gray-300">
+            <Link href="/studies" className="text-sm hover:text-gray-300">
               {t("studies")}
             </Link>
           </li>
           <li className="lg:border-e-2 lg:pe-2 font-normal text-lg">
-            <Link href="#" className="text-sm hover:text-gray-300">
+            <Link href="/studies" className="text-sm hover:text-gray-300">
               {t("seminars")}
             </Link>
           </li>
           <li className="lg:border-e-2 lg:pe-2 font-normal text-lg">
-            <Link href="#" className="text-sm hover:text-gray-300">
+            <Link href="/opinion-polls" className="text-sm hover:text-gray-300">
               {t("opinionPolls")}
             </Link>
           </li>
           <li className="lg:border-e-2 lg:pe-2 font-normal text-lg">
-            <Link href="#" className="text-sm hover:text-gray-300">
+            <Link href="/forums" className="text-sm hover:text-gray-300">
               {t("forums")}
             </Link>
           </li>
           <li className="font-normal text-lg">
-            <Link href="#" className="text-sm hover:text-gray-300">
+            <Link href="/news" className="text-sm hover:text-gray-300">
               {t("news")}
             </Link>
           </li>

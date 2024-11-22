@@ -2,7 +2,6 @@
 import {useTranslations} from "next-intl";
 import PageWrapper from "../PageWrapper";
 import {HighlightSection} from "@/components/shared/HighlightSection";
-import {Link} from "@/i18n/routing";
 
 export default function OpinionPolls() {
     const tBreadcrumb = useTranslations("common");

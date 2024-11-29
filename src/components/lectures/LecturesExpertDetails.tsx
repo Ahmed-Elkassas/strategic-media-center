@@ -3,8 +3,9 @@
 import {useTranslations} from "next-intl";
 
 import ExpertDetails from "@/components/shared/ExpertDetails";
+import {withAuth} from "@/components/withAuth";
 
-export default function LecturesExpertDetails() {
+ function LecturesExpertDetails() {
     const tBreadcrumb = useTranslations("common.breadcrumb");
     const tExpert = useTranslations("common.expertDetails");
     const tLectures = useTranslations("lectures.expertDetails")
@@ -59,3 +60,5 @@ export default function LecturesExpertDetails() {
 
     );
 }
+
+export default  withAuth(LecturesExpertDetails);

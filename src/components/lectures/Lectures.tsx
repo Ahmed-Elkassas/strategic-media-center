@@ -3,8 +3,9 @@
 import { useTranslations } from "next-intl";
 import PageWrapper from "../PageWrapper";
 import { HighlightSection } from "../shared/HighlightSection";
+import {withAuth} from "@/components/withAuth";
 
-export default function Lectures() {
+function Lectures() {
   const tBreadcrumb = useTranslations("common");
   const tLectures = useTranslations("lectures");
   return (
@@ -60,3 +61,5 @@ export default function Lectures() {
     </PageWrapper>
   );
 }
+
+export default withAuth(Lectures);

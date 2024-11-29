@@ -4,8 +4,9 @@ import { Breadcrumb } from "antd";
 import PageWrapper from "../PageWrapper";
 import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
+import {withAuth} from "@/components/withAuth";
 
-export default function CourseTypes() {
+ function CourseTypes() {
   const tBreadcrumb = useTranslations("common.breadcrumb");
   const tCourses = useTranslations("training.coursesTypes");
 
@@ -66,3 +67,5 @@ export default function CourseTypes() {
     </PageWrapper>
   );
 }
+
+export default  withAuth(CourseTypes)

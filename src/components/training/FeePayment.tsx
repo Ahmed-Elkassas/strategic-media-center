@@ -9,8 +9,9 @@ import {
   feePaymentCoursesColumns,
   feePaymentCoursesDataSource
 } from "@/config/tables/courseFeePayment";
+import {withAuth} from "@/components/withAuth";
 
-export default function FeePayment() {
+ function FeePayment() {
   const tBreadcrumb = useTranslations("common.breadcrumb");
   const tPayment = useTranslations("training.payment");
 
@@ -90,3 +91,5 @@ export default function FeePayment() {
     </PageWrapper>
   );
 }
+
+export default withAuth(FeePayment)

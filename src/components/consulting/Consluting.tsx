@@ -3,8 +3,9 @@ import { Link } from "@/i18n/routing";
 import { consultingServices } from "@/lib/data/consultingData";
 import { useTranslations } from "next-intl";
 import PageWrapper from "../PageWrapper";
+import {withAuth} from "@/components/withAuth";
 
-export default function Consulting() {
+ function Consulting() {
   const tConsulting = useTranslations("consulting");
   const tCommon = useTranslations("common");
 
@@ -64,3 +65,5 @@ export default function Consulting() {
     </PageWrapper>
   );
 }
+
+export default withAuth(Consulting)

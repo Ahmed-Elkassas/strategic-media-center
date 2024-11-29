@@ -4,8 +4,9 @@ import { Breadcrumb } from "antd";
 import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 import PageWrapper from '../PageWrapper'
+import {withAuth} from "@/components/withAuth";
 
-export default function DialogueForumDetails() {
+ function DialogueForumDetails() {
     const tBreadcrumb = useTranslations("common.breadcrumb");
     const tForumDetails = useTranslations("forums.details");
 
@@ -88,3 +89,5 @@ export default function DialogueForumDetails() {
         </PageWrapper>
     );
 }
+
+export default withAuth(DialogueForumDetails)

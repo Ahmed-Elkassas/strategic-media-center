@@ -24,8 +24,9 @@ import {
   wayTypeOptions
 } from "@/constants/consultingOptions";
 import { ConsultingRequestFormValues } from "@/types/form";
+import { withAuth } from "@/components/withAuth";
 
-export default function ConsultingRequest() {
+function ConsultingRequest() {
   const tBreadcrumb = useTranslations("common.breadcrumb.consulting");
   const tConsulting = useTranslations("consulting");
   const tConsultingForm = useTranslations("consulting.form");
@@ -315,3 +316,5 @@ export default function ConsultingRequest() {
     </PageWrapper>
   );
 }
+
+export default withAuth(ConsultingRequest);

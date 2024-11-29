@@ -1,5 +1,7 @@
 import ConsultingReceived from "@/components/consulting/ConsultingReceived";
 
-export default function ConsultingReceivedPage() {
+function ConsultingReceivedPage() {
   return <ConsultingReceived />;
 }
+
+export default ConsultingReceivedPage;

@@ -1,5 +1,5 @@
 "use client";
-import { Form, Input, Select, Button, Space, Checkbox } from "antd";
+import { Form, Input, Select, Button, Space, Checkbox, message } from "antd";
 import ReCAPTCHA from "react-google-recaptcha";
 
 import { useTranslations } from "next-intl";
@@ -8,7 +8,8 @@ import { useState } from "react";
 import { SignupFormValues } from "@/types/form";
 import { getCountryOptions } from "@/lib/helpers";
 import { COUNTRY_CODES } from "@/constants/formOptions";
-import { Link } from "@/i18n/routing";
+import { Link, useRouter } from "@/i18n/routing";
+import {useSignup} from "@/hooks/useSignup";
 
 const { Option } = Select;
 
@@ -16,6 +17,8 @@ const recaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || "";
 
 export default function SignupForm() {
   const t = useTranslations("auth");
+  const router = useRouter();
+  const { mutate: signupMutate, isPending } = useSignup();
   const [recaptchaValue, setRecaptchaValue] = useState<string | null>(null);
 
   const handleRecaptchaChange = (value: string | null) => {
@@ -24,14 +27,31 @@ export default function SignupForm() {
 
   const countryCodeList = getCountryOptions(COUNTRY_CODES, t);
 
-  const onFinish = (values: SignupFormValues) => {
+  const onFinish = async (values: SignupFormValues) => {
     if (!recaptchaValue) {
       alert(t("validationMsg.recaptchaRequired"));
       return;
     }
-
-    console.log("Form values:", values);
-    // Submit form data here
+    signupMutate(values,
+        {
+          onSuccess: () => {
+            message.success("تمت عملية التسجيل بنجاح")
+            router.push("/signup-success");
+          },
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          onError: (error: any) => {
+            if (error && error?.response) {
+              const serverMessage = error?.response?.data?.response?.error;
+              if (serverMessage) {
+                message.error(serverMessage); // Display server error message
+              } else {
+                message.error("حدث خطأ ما أثناء التسجيل");
+              }
+            } else {
+              message.error("حدث خطأ ما أثناء التسجيل");
+            }
+          },
+        });
   };
 
   return (
@@ -45,7 +65,7 @@ export default function SignupForm() {
           <Space.Compact size="middle" className="w-full">
             <Form.Item
               label={t("subscriptionForm.name.firstName")}
-              name="firstName"
+              name="name"
               rules={[
                 {
                   message: `${t("validationMsg.firstNameRequired")}`,
@@ -59,7 +79,7 @@ export default function SignupForm() {
 
             <Form.Item
               label={t("subscriptionForm.name.secondName")}
-              name="secondName"
+              name="second_name"
               rules={[
                 {
                   message: `${t("validationMsg.secondNameRequired")}`,
@@ -75,7 +95,6 @@ export default function SignupForm() {
           <Form.Item label={t("subscriptionForm.mobileNumber.label")}>
             <Space.Compact size="middle" className="w-full">
               <Form.Item
-                name="countryCode"
                 noStyle
                 initialValue="+20"
                 rules={[
@@ -94,7 +113,7 @@ export default function SignupForm() {
                 </Select>
               </Form.Item>
               <Form.Item
-                name="phoneNumber"
+                name="phone"
                 rules={[
                   {
                     required: true,
@@ -115,6 +134,7 @@ export default function SignupForm() {
           <Form.Item
             label={t("subscriptionForm.jobType.jobRole")}
             required={false}
+            name="job"
           >
             <Select placeholder={t("subscriptionForm.jobType.selectJobRole")}>
               <Option value="engineering">
@@ -162,7 +182,7 @@ export default function SignupForm() {
           {/* Confirm Password Field */}
           <Form.Item
             label={t("subscriptionForm.confirmPassword.label")}
-            name="confirmPassword"
+            name="password_confirmation"
             dependencies={["password"]}
             hasFeedback
             rules={[
@@ -188,7 +208,7 @@ export default function SignupForm() {
           </Form.Item>
           {/* Agreement Checkboxes */}
           <Form.Item
-            name="confirmDataAccuracy"
+            name="confirm_data_accuracy"
             valuePropName="checked"
             required={true}
             rules={[
@@ -208,7 +228,7 @@ export default function SignupForm() {
           </Form.Item>
 
           <Form.Item
-            name="acceptTerms"
+            name="accept_terms"
             valuePropName="checked"
             rules={[
               {
@@ -235,7 +255,7 @@ export default function SignupForm() {
             </Checkbox>
           </Form.Item>
 
-          <Form.Item name="notifyEvents" valuePropName="checked">
+          <Form.Item name="notify_events" valuePropName="checked">
             <Checkbox>{t("subscriptionForm.agreements.notifyEvents")}</Checkbox>
           </Form.Item>
 
@@ -253,7 +273,7 @@ export default function SignupForm() {
 
           {/* Submit Button */}
           <Form.Item>
-            <Button type="primary" htmlType="submit">
+            <Button type="primary" htmlType="submit" loading={isPending}>
               {t("subscriptionForm.submit")}
             </Button>
           </Form.Item>

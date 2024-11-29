@@ -239,6 +239,33 @@
         "register": "تسجیل مستخدم جدید"
       }
     },
+    "forgotPassword": {
+      "title": "نسيت كلمة المرور",
+      "emailLabel": "البريد الإلكتروني",
+      "emailRequired": "يرجى إدخال بريدك الإلكتروني",
+      "emailPlaceholder": "أدخل بريدك الإلكتروني",
+      "validationMsg": {
+        "recaptchaRequired": "يرجى إكمال reCAPTCHA"
+      },
+      "recaptchaMissing": "مفتاح موقع reCAPTCHA مفقود",
+      "submit": "إرسال رابط إعادة التعيين",
+      "emailSent": "إذا كان هناك حساب مرتبط بهذا البريد الإلكتروني، فقد أرسلنا بريدًا إلكترونيًا يحتوي على تعليمات لإعادة تعيين كلمة المرور.",
+      "errorOccurred": "حدث خطأ. يرجى المحاولة مرة أخرى لاحقًا."
+    },
+    "resetPassword": {
+      "title": "إعادة تعيين كلمة المرور",
+      "newPasswordLabel": "كلمة المرور الجديدة",
+      "passwordRequired": "يرجى إدخال كلمة المرور",
+      "newPasswordPlaceholder": "أدخل كلمة المرور الجديدة",
+      "confirmPasswordLabel": "تأكيد كلمة المرور",
+      "confirmPasswordRequired": "يرجى تأكيد كلمة المرور",
+      "passwordsMustMatch": "يجب أن تتطابق كلمات المرور",
+      "confirmPasswordPlaceholder": "أدخل كلمة المرور مرة أخرى",
+      "submit": "إعادة تعيين كلمة المرور",
+      "passwordResetSuccess": "تمت إعادة تعيين كلمة المرور بنجاح",
+      "errorOccurred": "حدث خطأ",
+      "invalidToken": "رمز غير صالح أو مفقود"
+    },
     "validationMsg": {
       "firstNameRequired": "يرجى إدخال الإسم الأول ",
       "secondNameRequired": "يرجى إدخال الإسم الثاني ",

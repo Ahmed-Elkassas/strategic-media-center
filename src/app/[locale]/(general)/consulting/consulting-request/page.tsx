@@ -1,7 +1,10 @@
 "use client";
 
 import ConsultingRequest from "@/components/consulting/ConsultingRequest";
+import {withAuth} from "@/components/withAuth";
 
-export default function ConsultingRequestPage() {
+function ConsultingRequestPage() {
   return <ConsultingRequest />;
 }
+
+export default withAuth(ConsultingRequestPage);

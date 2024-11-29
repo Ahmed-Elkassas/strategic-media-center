@@ -5,9 +5,10 @@ import { Link } from "@/i18n/routing";
 import PageWrapper from "../PageWrapper";
 import {forumsColumns, forumsData} from "@/config/tables/forumsConfig";
 import ReusableTable from "../shared/Table";
+import {withAuth} from "@/components/withAuth";
 
 
-export default function Forums() {
+ function Forums() {
     const tCommon = useTranslations("common");
 
     return (
@@ -55,3 +56,5 @@ export default function Forums() {
         </PageWrapper>
     );
 }
+
+export default withAuth(Forums)

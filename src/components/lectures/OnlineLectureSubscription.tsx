@@ -7,8 +7,9 @@ import { useTranslations } from "next-intl";
 import ReusableTable from "../shared/Table";
 
 import {lecturesColumns, lecturesData} from "@/config/tables/lecturesConfig";
+import {withAuth} from "@/components/withAuth";
 
-export default function OnlineLectureSubscription() {
+ function OnlineLectureSubscription() {
   const tBreadcrumb = useTranslations("common.breadcrumb");
 
   return (
@@ -64,3 +65,5 @@ export default function OnlineLectureSubscription() {
     </PageWrapper>
   );
 }
+
+export default withAuth(OnlineLectureSubscription)

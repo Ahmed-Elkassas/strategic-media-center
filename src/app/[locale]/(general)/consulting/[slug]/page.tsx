@@ -1,9 +1,10 @@
 import ConsultingDetails from "@/components/consulting/ConsultingDetails";
 
-export default function ConsultingDetailsPage({
+ function ConsultingDetailsPage({
   params: { slug }
 }: {
   params: { slug: string };
 }) {
   return <ConsultingDetails slug={slug} />;
 }
+export default ConsultingDetailsPage;

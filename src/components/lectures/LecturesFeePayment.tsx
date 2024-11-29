@@ -6,8 +6,9 @@ import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 import {lecturesFeePaymentData, lecturesPaymentColumns} from "@/config/tables/lectureFeePayment";
 import ReusableTable from "@/components/shared/Table";
+import {withAuth} from "@/components/withAuth";
 
-export default function LecturesFeePayment() {
+ function LecturesFeePayment() {
     const tBreadcrumb = useTranslations("common.breadcrumb");
     const tLectures = useTranslations("lectures");
 
@@ -98,3 +99,5 @@ export default function LecturesFeePayment() {
         </PageWrapper>
     );
 }
+
+export default withAuth(LecturesFeePayment)

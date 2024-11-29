@@ -2,8 +2,9 @@
 import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 import PageWrapper from "../PageWrapper";
+import {withAuth} from "@/components/withAuth";
 
-export default function Studies() {
+ function Studies() {
   const tStudies = useTranslations("studies");
   const tCommon = useTranslations("common");
 
@@ -56,3 +57,5 @@ export default function Studies() {
     </PageWrapper>
   );
 }
+
+export default withAuth(Studies)

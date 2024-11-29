@@ -3,8 +3,9 @@ import {useTranslations} from "next-intl";
 import PageWrapper from "../PageWrapper";
 import {Link} from "@/i18n/routing";
 import {Breadcrumb} from "antd";
+import {withAuth} from "@/components/withAuth";
 
-export default function OpinionPollTypes() {
+ function OpinionPollTypes() {
     const tBreadcrumb = useTranslations("common");
     const tOpinionPolls = useTranslations("opinionPolls");
     return (
@@ -62,3 +63,5 @@ export default function OpinionPollTypes() {
         </PageWrapper>
     );
 }
+
+export default withAuth(OpinionPollTypes)

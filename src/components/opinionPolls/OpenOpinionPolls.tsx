@@ -6,8 +6,9 @@ import ReusableTable from "@/components/shared/Table";
 import { openOpinionPollsColumns, openOpinionPollsData } from "@/config/tables/openOpinionPollsConfig";
 import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
+import {withAuth} from "@/components/withAuth";
 
-export default function OpenOpinionPolls() {
+function OpenOpinionPolls() {
     const tBreadcrumb = useTranslations("common.breadcrumb");
     const tPolls = useTranslations("opinionPolls");
 
@@ -56,3 +57,5 @@ export default function OpenOpinionPolls() {
         </PageWrapper>
     );
 }
+
+export default withAuth(OpenOpinionPolls)

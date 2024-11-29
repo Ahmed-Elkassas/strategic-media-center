@@ -1,21 +1,79 @@
 "use client";
 
+import {useEffect, useState} from "react";
 import Image from "next/image";
-import { Link } from "@/i18n/routing";
+import {Button, Dropdown} from "antd";
+import type { MenuProps } from 'antd';
+import { Link, useRouter } from "@/i18n/routing";
 import { useLocale, useTranslations } from "next-intl";
 import {
   FacebookFilled,
   InstagramFilled,
   MenuOutlined,
-  TwitterCircleFilled,
+  TwitterCircleFilled, UserOutlined,
   YoutubeFilled
 } from "@ant-design/icons";
+import {isAuthenticated} from "@/utils/auth";
+import {logout} from "@/services/authService";
+
 export default function HomePageHeader() {
   const t = useTranslations("common.links");
+  const [authState, setAuthState] = useState<boolean>(false);
+  const [userName, setUserName] = useState<string>("");
 
   const locale = useLocale();
+  const router = useRouter()
 
   const isRTL = locale === "ar";
+
+
+  useEffect(() => {
+    // Function to update authentication state
+    const updateAuthState = () => {
+      const authenticated = isAuthenticated();
+      setAuthState(authenticated);
+
+      if (authenticated) {
+        const user = localStorage.getItem("user");
+        if (user) {
+          const userData = JSON.parse(user);
+          setUserName(userData.userName);
+        } else {
+          setUserName("");
+        }
+      } else {
+        setUserName("");
+      }
+    };
+
+    // Initial check
+    updateAuthState();
+
+    // Listen for storage changes (e.g., in case of logout from another tab)
+    window.addEventListener("storage", updateAuthState);
+
+    return () => {
+      window.removeEventListener("storage", updateAuthState);
+    };
+  }, []);
+
+  const handleLogout = () => {
+    logout();
+    setAuthState(false);
+    setUserName("");
+    router.push("/login");
+  };
+
+  const items: MenuProps['items'] = [
+    {
+      key: '1',
+      label: (
+          <Button htmlType="button" type="text" onClick={handleLogout}>
+            تسجيل خروج
+          </Button>
+      ),
+    }
+  ]
 
   return (
     <header className="relative">
@@ -45,9 +103,21 @@ export default function HomePageHeader() {
               <div className="flex-1 flex justify-between items-center w-full md:w-auto">
                 {/* <!-- Sign-in/Sign-up --> */}
                 <div className="flex gap-4">
-                  <Link href="/login" className="text-slate-700">
-                    تسجيل دخول
-                  </Link>
+                  { authState ?  (
+                      <>
+                        <Dropdown menu={{items}} placement="bottomRight">
+                        <span className="text-slate-700 cursor-pointer flex items-center gap-1">
+                          <UserOutlined />
+                          {userName || "اسم المستخدم"}
+                        </span>
+                        </Dropdown>
+                      </>
+                  ) : (
+                      <Link href="/login" className="text-slate-700">
+                        تسجيل دخول
+                      </Link>
+                  )}
+
                   <Link href="/signup" className="text-slate-700">
                     تسجيل جديد
                   </Link>

@@ -3,8 +3,9 @@
 import {useTranslations} from "next-intl";
 
 import ExpertDetails from "@/components/shared/ExpertDetails";
+import {withAuth} from "@/components/withAuth";
 
-export default function CoursesExpertDetails() {
+ function CoursesExpertDetails() {
     const tBreadcrumb = useTranslations("common.breadcrumb");
     const tExpert = useTranslations("common.expertDetails");
     const tTraining  = useTranslations("training.expertDetails")
@@ -57,3 +58,5 @@ export default function CoursesExpertDetails() {
         />
     );
 }
+
+export default withAuth(CoursesExpertDetails)

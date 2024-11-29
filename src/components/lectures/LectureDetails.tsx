@@ -4,8 +4,9 @@ import { Breadcrumb } from "antd";
 import PageWrapper from "../PageWrapper";
 import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
+import {withAuth} from "@/components/withAuth";
 
-export function LectureDetails() {
+ function LectureDetails() {
     const tBreadcrumb = useTranslations("common.breadcrumb");
     const tLectureDetails = useTranslations("lectures.details");
 
@@ -75,3 +76,5 @@ export function LectureDetails() {
         </PageWrapper>
     );
 }
+
+export default withAuth(LectureDetails)

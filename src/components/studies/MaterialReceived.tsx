@@ -3,8 +3,9 @@
 import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 import SuccessMessage from "../shared/SuccessMessage";
+import {withAuth} from "@/components/withAuth";
 
-export default function MaterialReceived() {
+ function MaterialReceived() {
   const t = useTranslations("studies");
   const tBreadcrumb = useTranslations("common");
 
@@ -49,3 +50,5 @@ export default function MaterialReceived() {
     </SuccessMessage>
   );
 }
+
+export default withAuth(MaterialReceived)

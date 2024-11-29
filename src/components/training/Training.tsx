@@ -3,8 +3,9 @@
 import { useTranslations } from "next-intl";
 import PageWrapper from "../PageWrapper";
 import { HighlightSection } from "../shared/HighlightSection";
+import {withAuth} from "@/components/withAuth";
 
-export default function Training() {
+ function Training() {
   const tBreadcrumb = useTranslations("common");
   const tTraining = useTranslations("training");
   return (
@@ -45,3 +46,5 @@ export default function Training() {
     </PageWrapper>
   );
 }
+
+export default  withAuth(Training)

@@ -7,8 +7,10 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 import "../../globals.css";
+import Providers from "@/app/providers";
 
 type Locale = "ar" | "en";
+
 
 export default async function RootLayout({
   children,
@@ -28,14 +30,18 @@ export default async function RootLayout({
 
   const messages = await getMessages();
 
+
+
   return (
     <html lang="ar" dir={dir}>
       <body className="min-h-screen flex flex-col">
         <NextIntlClientProvider messages={messages}>
-          <Navbar />
-          <Header />
-          {children}
-          <Footer />
+          <Providers>
+            <Navbar />
+            <Header />
+            {children}
+            <Footer />
+          </Providers>
         </NextIntlClientProvider>
       </body>
     </html>

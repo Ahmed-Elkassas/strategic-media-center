@@ -9,6 +9,7 @@ import HomePageHeader from "@/components/home/Header";
 import HomePageFooter from "@/components/home/Footer";
 
 import "../../globals.css";
+import Providers from "@/app/providers";
 
 // const geistSans = localFont({
 //   src: "../fonts/GeistVF.woff",
@@ -58,9 +59,11 @@ export default async function LocaleLayout({
       >
         <NextIntlClientProvider messages={messages}>
           {/* // TODO: DON'T Forget to replace the 'Navbar' with home page Navbar */}
+          <Providers>
           <HomePageHeader />
           {children}
           <HomePageFooter />
+          </Providers>
         </NextIntlClientProvider>
       </body>
     </html>

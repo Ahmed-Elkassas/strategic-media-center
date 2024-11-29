@@ -4,34 +4,37 @@ export interface LoginFormValues {
 }
 
 export interface SubscriptionFormValues {
-  firstName: string;
+  name: string;
+  // firstName: string;
   secondName: string;
   lastName: string;
   email: string;
   password: string;
-  confirmPassword: string;
-  subscriptionType: string;
-  organizationName?: string;
-  subscriptionDuration: string;
-  jobRole?: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  avatar?: any;
-  preferredContactMethod: string;
-  confirmDataAccuracy: boolean;
-  acceptTerms: boolean;
-  notifyEvents?: boolean;
+  password_confirmation: string;
+  type: string;
+  organization?: string;
+  duration: string;
+  job?: string;
+  photo?: string;
+  resident_country: string;
+  contact_type: string;
+  confirmData_accuracy: boolean;
+  accept_terms: boolean;
+  notify_events?: boolean;
+  phone: string;
 }
 
 export interface SignupFormValues {
-  firstName: string;
-  secondName: string;
+  name: string;
+  second_name: string;
   email: string;
+  phone: string;
   password: string;
-  confirmPassword: string;
-  jobRole?: string;
-  confirmDataAccuracy: boolean;
-  acceptTerms: boolean;
-  notifyEvents?: boolean;
+  password_confirmation: string;
+  job?: string;
+  confirm_data_accuracy: boolean;
+  accept_terms: boolean;
+  notify_events?: boolean;
 }
 
 export interface ConsultingRequestFormValues {
@@ -74,15 +77,14 @@ export interface PrivateCourseSubscriptionFormValues {
   confirmDataAccuracy: boolean; // Checkbox for data accuracy confirmation
 }
 
-
 export interface UploadMaterialFormValues {
   materialType: string;
   authorName: string;
   mobileNumber: string;
   email: string;
-  materialSpecialization: string
-  materialSummary: string
-  firstPublicationDate: string
-  upload?: string
-  otherAuthors?: string
+  materialSpecialization: string;
+  materialSummary: string;
+  firstPublicationDate: string;
+  upload?: string;
+  otherAuthors?: string;
 }

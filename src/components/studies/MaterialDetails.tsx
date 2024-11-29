@@ -4,8 +4,9 @@ import { Breadcrumb } from "antd";
 import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 import PageWrapper from "../PageWrapper";
+import {withAuth} from "@/components/withAuth";
 
-export function MaterialDetails() {
+ function MaterialDetails() {
   const tBreadcrumb = useTranslations("common.breadcrumb");
   const tMaterial = useTranslations("studies.materialDetails");
 
@@ -73,3 +74,4 @@ export function MaterialDetails() {
     </PageWrapper>
   );
 }
+export default withAuth(MaterialDetails)

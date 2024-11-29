@@ -2,8 +2,9 @@
 import {useTranslations} from "next-intl";
 import PageWrapper from "../PageWrapper";
 import {HighlightSection} from "@/components/shared/HighlightSection";
+import {withAuth} from "@/components/withAuth";
 
-export default function OpinionPolls() {
+ function OpinionPolls() {
     const tBreadcrumb = useTranslations("common");
     return (
         <PageWrapper sidebarContent={undefined} sidebarTitle={undefined}>
@@ -45,3 +46,5 @@ export default function OpinionPolls() {
         </PageWrapper>
     );
 }
+
+export default withAuth(OpinionPolls)

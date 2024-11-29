@@ -9,8 +9,9 @@ import {
   trainingCoursesColumns,
   trainingCoursesData
 } from "@/config/tables/trainingCoursesConfig";
+import {withAuth} from "@/components/withAuth";
 
-export default function OnlineCourseSubscription() {
+ function OnlineCourseSubscription() {
   const tBreadcrumb = useTranslations("common.breadcrumb");
   const tTraining = useTranslations("training");
 
@@ -67,3 +68,5 @@ export default function OnlineCourseSubscription() {
     </PageWrapper>
   );
 }
+
+export default withAuth(OnlineCourseSubscription)

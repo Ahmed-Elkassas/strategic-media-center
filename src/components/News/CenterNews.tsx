@@ -4,8 +4,9 @@ import { Breadcrumb, Button } from "antd";
 import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 import PageWrapper from "../PageWrapper";
+import {withAuth} from "@/components/withAuth";
 
-export default function CenterNews() {
+ function CenterNews() {
   const tNews = useTranslations("news");
 
   const newsList = [
@@ -78,3 +79,5 @@ export default function CenterNews() {
     </PageWrapper>
   );
 }
+
+export default withAuth(CenterNews)

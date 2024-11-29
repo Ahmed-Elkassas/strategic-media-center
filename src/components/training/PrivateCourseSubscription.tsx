@@ -24,8 +24,9 @@ import {
   requestEntityOptions
 } from "@/constants/trainingOptions";
 import { PrivateCourseSubscriptionFormValues } from "@/types/form";
+import {withAuth} from "@/components/withAuth";
 
-export default function PrivateCourseSubscription() {
+ function PrivateCourseSubscription() {
   const tBreadcrumb = useTranslations("common.breadcrumb");
   const tConsulting = useTranslations("consulting");
   const tAuth = useTranslations("auth");
@@ -318,3 +319,5 @@ export default function PrivateCourseSubscription() {
     </PageWrapper>
   );
 }
+
+export default withAuth(PrivateCourseSubscription)

@@ -6,8 +6,9 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { consultingServices } from "@/lib/data/consultingData";
 import PageWrapper from "../PageWrapper";
+import {withAuth} from "@/components/withAuth";
 
-export default function ConsultingDetails({ slug }: { slug: string }) {
+ function ConsultingDetails({ slug }: { slug: string }) {
   const service = consultingServices?.find((s) => s.slug === slug);
 
   const t = useTranslations("common.breadcrumb.consulting");
@@ -111,3 +112,5 @@ export default function ConsultingDetails({ slug }: { slug: string }) {
     </PageWrapper>
   );
 }
+
+export default  withAuth(ConsultingDetails)

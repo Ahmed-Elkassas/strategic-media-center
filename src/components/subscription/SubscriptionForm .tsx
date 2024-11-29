@@ -1,15 +1,15 @@
 "use client";
-import { Form, Input, Select, Button, Space, Upload, Checkbox } from "antd";
+import {Form, Input, Select, Button, Space, Checkbox, message} from "antd";
 import ReCAPTCHA from "react-google-recaptcha";
 
 import { useTranslations } from "next-intl";
 import PageWrapper from "../PageWrapper";
 import { useState } from "react";
-import { UploadOutlined } from "@ant-design/icons";
 import { SubscriptionFormValues } from "@/types/form";
-import { Link, redirect } from "@/i18n/routing";
+import {Link, useRouter} from "@/i18n/routing";
 import { getCountryOptions } from "@/lib/helpers";
 import { COUNTRY_CODES, COUNTRY_OPTIONS } from "@/constants/formOptions";
+import {useCreateSubscription} from "@/hooks/useCreateSubscription";
 
 const { Option } = Select;
 
@@ -17,6 +17,10 @@ const recaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || "";
 
 export default function SubscriptionForm() {
   const t = useTranslations("auth");
+  const router = useRouter();
+
+  const {mutate: subscriptionMutate, isPending} = useCreateSubscription()
+
   const [isOrganization, setIsOrganization] = useState(false);
   const [recaptchaValue, setRecaptchaValue] = useState<string | null>(null);
 
@@ -36,18 +40,26 @@ export default function SubscriptionForm() {
       alert(t("validationMsg.recaptchaRequired"));
       return;
     }
-    console.log("Form values:", values);
-    redirect({ href: "/subscription-success", locale: "auto" });
-    // Submit form data here
-  };
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const normFile = (e: any) => {
-    console.log("Upload event:", e);
-    if (Array.isArray(e)) {
-      return e;
-    }
-    return e?.fileList;
+    subscriptionMutate(values, {
+      onSuccess: () => {
+        router.push("/subscription-success");
+      },
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      onError: (error: any) => {
+        if (error && error?.response) {
+          const serverMessage = error?.response?.data?.response?.error;
+          if (serverMessage) {
+            message.error(serverMessage); // Display server error message
+          } else {
+            message.error("حدث خطأ ما أثناء التسجيل");
+          }
+        } else {
+          message.error("حدث خطأ ما أثناء التسجيل");
+        }
+      },
+
+    })
   };
 
   return (
@@ -65,8 +77,8 @@ export default function SubscriptionForm() {
           layout="horizontal"
           variant="filled"
           onValuesChange={(changedValues) => {
-            if (changedValues.subscriptionType) {
-              handleSubscriptionTypeChange(changedValues.subscriptionType);
+            if (changedValues.type) {
+              handleSubscriptionTypeChange(changedValues.type);
             }
           }}
           onFinish={onFinish}
@@ -75,7 +87,7 @@ export default function SubscriptionForm() {
           <Space.Compact size="middle" className="w-full">
             <Form.Item
               label={t("subscriptionForm.name.firstName")}
-              name="firstName"
+              name="name"
               rules={[
                 {
                   message: `${t("validationMsg.firstNameRequired")}`,
@@ -134,7 +146,7 @@ export default function SubscriptionForm() {
           <Form.Item label={t("subscriptionForm.mobileNumber.label")}>
             <Space.Compact size="middle" className="w-full">
               <Form.Item
-                name="countryCode"
+                name="country_code"
                 noStyle
                 initialValue="+20"
                 rules={[
@@ -153,7 +165,7 @@ export default function SubscriptionForm() {
                 </Select>
               </Form.Item>
               <Form.Item
-                name="phoneNumber"
+                name="phone"
                 rules={[
                   {
                     required: true,
@@ -190,7 +202,7 @@ export default function SubscriptionForm() {
           {/* Confirm Password Field */}
           <Form.Item
             label={t("subscriptionForm.confirmPassword.label")}
-            name="confirmPassword"
+            name="password_confirmation"
             dependencies={["password"]}
             hasFeedback
             rules={[
@@ -218,7 +230,7 @@ export default function SubscriptionForm() {
           {/* Country of Residence */}
           <Form.Item
             label={t("subscriptionForm.country.label")}
-            name="country"
+            name="resident_country"
             rules={[
               { required: true, message: t("validationMsg.countryRequired") }
             ]}
@@ -236,7 +248,7 @@ export default function SubscriptionForm() {
             {/* Subscription Type */}
             <Form.Item
               label={t("subscriptionForm.subscriptionType.label")}
-              name="subscriptionType"
+              name="type"
               rules={[
                 {
                   required: true,
@@ -261,7 +273,7 @@ export default function SubscriptionForm() {
             {isOrganization && (
               <Form.Item
                 label={t("subscriptionForm.organizationName.label")}
-                name="organizationName"
+                name="organization"
                 rules={[
                   {
                     required: true,
@@ -281,7 +293,7 @@ export default function SubscriptionForm() {
           {/* Subscription Duration */}
           <Form.Item
             label={t("subscriptionForm.subscriptionDuration.label")}
-            name="subscriptionDuration"
+            name="duration"
             rules={[
               {
                 required: true,
@@ -307,6 +319,7 @@ export default function SubscriptionForm() {
           <Form.Item
             label={t("subscriptionForm.jobType.jobRole")}
             required={false}
+            name="job"
           >
             <Select placeholder={t("subscriptionForm.jobType.selectJobRole")}>
               <Option value="engineering">
@@ -333,29 +346,12 @@ export default function SubscriptionForm() {
             </Select>
           </Form.Item>
 
-          {/* Upload Image Field */}
-          <Form.Item
-            name="avatar"
-            label={t("subscriptionForm.uploadImage.label")}
-            valuePropName="fileList"
-            getValueFromEvent={normFile}
-          >
-            <Upload
-              name="avatar"
-              listType="picture"
-              maxCount={1}
-              beforeUpload={() => false} // Disable automatic upload
-            >
-              <Button icon={<UploadOutlined />}>
-                {t("subscriptionForm.uploadImage.placeholder")}
-              </Button>
-            </Upload>
-          </Form.Item>
+
 
           {/* Preferred Contact Method Field */}
           <Form.Item
             label={t("subscriptionForm.preferredContactMethod.label")}
-            name="preferredContactMethod"
+            name="contact_type"
             rules={[
               {
                 required: true,
@@ -382,7 +378,7 @@ export default function SubscriptionForm() {
 
           {/* Agreement Checkboxes */}
           <Form.Item
-            name="confirmDataAccuracy"
+            name="confirmData_accuracy"
             valuePropName="checked"
             required={true}
             rules={[
@@ -429,7 +425,7 @@ export default function SubscriptionForm() {
             </Checkbox>
           </Form.Item>
 
-          <Form.Item name="notifyEvents" valuePropName="checked">
+          <Form.Item name="notify_events" valuePropName="checked">
             <Checkbox>{t("subscriptionForm.agreements.notifyEvents")}</Checkbox>
           </Form.Item>
 
@@ -447,7 +443,7 @@ export default function SubscriptionForm() {
 
           {/* Submit Button */}
           <Form.Item>
-            <Button type="primary" htmlType="submit">
+            <Button type="primary" htmlType="submit" loading={isPending}>
               {t("subscriptionForm.submit")}
             </Button>
           </Form.Item>

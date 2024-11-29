@@ -4,10 +4,11 @@ import { Breadcrumb, Typography } from "antd";
 import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 import PageWrapper from "../PageWrapper";
+import {withAuth} from "@/components/withAuth";
 
 const { Paragraph } = Typography;
 
-export default function NewsDetails() {
+ function NewsDetails() {
   const tNews = useTranslations("news");
   const tNewsDetails = useTranslations("news.details");
 
@@ -66,3 +67,5 @@ export default function NewsDetails() {
     </PageWrapper>
   );
 }
+
+export default withAuth(NewsDetails)

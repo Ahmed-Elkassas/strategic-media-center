@@ -6,8 +6,9 @@ import ReusableTable from "@/components/shared/Table";
 import { studiesColumns, studiesData } from "@/config/tables/studiesConfig";
 import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
+import {withAuth} from "@/components/withAuth";
 
-export default function StudiesList() {
+ function StudiesList() {
   const tBreadcrumb = useTranslations("common.breadcrumb");
   const tStudies = useTranslations("studies");
 
@@ -51,3 +52,5 @@ export default function StudiesList() {
     </PageWrapper>
   );
 }
+
+export default withAuth(StudiesList)

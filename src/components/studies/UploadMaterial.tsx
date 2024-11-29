@@ -6,8 +6,9 @@ import PageWrapper from "../PageWrapper";
 import { useTranslations } from "next-intl";
 import {Link, useRouter} from "@/i18n/routing";
 import {UploadMaterialFormValues} from "@/types/form";
+import {withAuth} from "@/components/withAuth";
 
-export default function UploadMaterial() {
+function UploadMaterial() {
   const tBreadcrumb = useTranslations("common.breadcrumb");
   // const tUpload = useTranslations("studies.uploadMaterial");
 
@@ -163,3 +164,5 @@ export default function UploadMaterial() {
     </PageWrapper>
   );
 }
+
+export default withAuth(UploadMaterial)

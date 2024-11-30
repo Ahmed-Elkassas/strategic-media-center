@@ -367,12 +367,12 @@ export default function SubscriptionForm() {
               <Option value="email">
                 {t("subscriptionForm.preferredContactMethod.email")}
               </Option>
-              <Option value="mobile">
-                {t("subscriptionForm.preferredContactMethod.mobile")}
-              </Option>
-              <Option value="whatsapp">
-                {t("subscriptionForm.preferredContactMethod.whatsapp")}
-              </Option>
+              {/*<Option value="mobile">*/}
+              {/*  {t("subscriptionForm.preferredContactMethod.mobile")}*/}
+              {/*</Option>*/}
+              {/*<Option value="whatsapp">*/}
+              {/*  {t("subscriptionForm.preferredContactMethod.whatsapp")}*/}
+              {/*</Option>*/}
             </Select>
           </Form.Item>
 

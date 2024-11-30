@@ -39,17 +39,6 @@ function ConsultingReceived() {
       message={message}
       additionalMessage={additionalMessage}
     >
-      <div className="mt-6">
-        <h2 className="text-xl font-semibold text-gray-800 mb-4">
-          {t("relatedConsultations.title")}
-        </h2>
-        <ul className="list-disc list-inside text-gray-700 space-y-2">
-          <li>{t("relatedConsultations.item1")}</li>
-          <li>{t("relatedConsultations.item2")}</li>
-          <li>{t("relatedConsultations.item3")}</li>
-        </ul>
-      </div>
-
       {/* Call-to-Action */}
       <div className="mt-6 text-center">
         <Link

@@ -38,22 +38,20 @@ export interface SignupFormValues {
 }
 
 export interface ConsultingRequestFormValues {
-  firstName: string;
-  secondName: string;
-  lastName: string;
+  name: string;
   email: string;
-  jobPosition: string;
+  job_position: string;
   phone: string;
-  organizationName: string;
-  establishmentDate: string;
-  ownershipType: string;
-  wayType: string;
-  country: string;
-  numberOfEmployees: string;
-  numberOfOffices: string;
-  institutionChallenges?: string;
-  estimatedBudget: string;
-  additionalInfo?: string;
+  org_type: string;
+  org_name: string;
+  org_status: string;
+  means_type: string;
+  headquarter_country: string;
+  employees_number: string;
+  external_offices_number: string;
+  suffers_area?: string;
+  annual_budget: string;
+  notes?: string;
 }
 
 export interface PrivateCourseSubscriptionFormValues {

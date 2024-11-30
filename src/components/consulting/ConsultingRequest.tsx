@@ -5,26 +5,22 @@ import {
   Button,
   DatePicker,
   Form,
-  Input,
+  Input, message,
   Select,
   Space
 } from "antd";
+import dayjs from 'dayjs';
 import { useTranslations } from "next-intl";
 import { Link, useRouter } from "@/i18n/routing";
 import PageWrapper from "../PageWrapper";
-import { getCountryOptions } from "@/lib/helpers";
-import { COUNTRY_OPTIONS } from "@/constants/formOptions";
-import {
-  budgetOptions,
-  employeeOptions,
-  institutionChallenges,
-  jobPositionOptions,
-  officeOptions,
-  ownershipTypeOptions,
-  wayTypeOptions
-} from "@/constants/consultingOptions";
+
+import { AxiosError } from 'axios';
 import { ConsultingRequestFormValues } from "@/types/form";
 import { withAuth } from "@/components/withAuth";
+import {useCreate} from "@/hooks/useCreate";
+import {useDropdownData} from "@/hooks/useDropDownData";
+import {useEffect, useState} from "react";
+import {dropdownKeys} from "@/lib/constants";
 
 function ConsultingRequest() {
   const tBreadcrumb = useTranslations("common.breadcrumb.consulting");
@@ -33,13 +29,51 @@ function ConsultingRequest() {
   const tAuth = useTranslations("auth");
 
   const [form] = Form.useForm();
-  const router = useRouter(); // Use the router hook for navigation
+  const router = useRouter();
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const { mutate, isPending } = useCreate<any, ConsultingRequestFormValues>({
+    endpoint: '/user/v1/consultation-request'});
 
-  const countryList = getCountryOptions(COUNTRY_OPTIONS, tAuth);
+  const { mutate: fetchDropdownData, isPending: isDropdownPending } = useDropdownData();
 
-  const onFinish = (values: ConsultingRequestFormValues) => {
-    console.log("Form Submitted:", values);
-    router.push("/consulting/consulting-received");
+  const [dropdownOptions, setDropdownOptions] = useState<Record<string, string[]>>({});
+
+  useEffect(() => {
+    fetchDropdownData({ keys: dropdownKeys }, {
+      onSuccess: (response) => {
+        const dropdownData = response?.data?.response?.data || {};
+        setDropdownOptions(dropdownData);
+      },
+      onError: () => {
+        console.error("Failed to fetch dropdown data.");
+      },
+    });
+  }, []);
+
+
+  const onFinish = (values: ConsultingRequestFormValues & { secondName: string; lastName: string; establishment_date: dayjs.Dayjs } ) => {
+
+    // Remove secondName and lastName from values and replace with the combined name
+    const { secondName, lastName, establishment_date,...restValues } = values;
+    // Format the date using dayjs
+    const formattedDate = establishment_date ? dayjs(establishment_date).format('YYYY-MM-DD') : '';
+
+    // Combine name fields
+    const fullName = `${values.name} ${secondName} ${lastName}`;
+    const payload = { ...restValues, name: fullName, establishment_date: formattedDate };
+
+    mutate(payload , {
+      onSuccess: () => {
+        message.success('Organization created successfully');
+        router.push("/consulting/consulting-received");
+      },
+      onError: (error: AxiosError) => {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-expect-error
+        message.error(`Error: ${error?.response?.data?.response?.error || error.message}`);
+      },
+    },
+    )
   };
 
   const onReset = () => {
@@ -80,56 +114,56 @@ function ConsultingRequest() {
           {/* Name Fields */}
           <Space.Compact size="middle" className="w-full">
             <Form.Item
-              label={tAuth("subscriptionForm.name.firstName")}
-              name="firstName"
-              rules={[
-                {
-                  message: `${tAuth("validationMsg.firstNameRequired")}`,
-                  required: true
-                }
-              ]}
-              className="flex-1"
+                label={tAuth("subscriptionForm.name.firstName")}
+                name="name"
+                rules={[
+                  {
+                    message: `${tAuth("validationMsg.firstNameRequired")}`,
+                    required: true
+                  }
+                ]}
+                className="flex-1"
             >
               <Input placeholder={tAuth("subscriptionForm.name.placeholder")} />
             </Form.Item>
 
             <Form.Item
-              label={tAuth("subscriptionForm.name.secondName")}
-              name="secondName"
-              rules={[
-                {
-                  message: `${tAuth("validationMsg.secondNameRequired")}`,
-                  required: true
-                }
-              ]}
-              className="flex-1"
+                label={tAuth("subscriptionForm.name.secondName")}
+                name="secondName"
+                rules={[
+                  {
+                    message: `${tAuth("validationMsg.secondNameRequired")}`,
+                    required: true
+                  }
+                ]}
+                className="flex-1"
             >
               <Input placeholder={tAuth("subscriptionForm.name.placeholder")} />
             </Form.Item>
 
             <Form.Item
-              label={tAuth("subscriptionForm.name.lastName")}
-              name="lastName"
-              rules={[
-                {
-                  message: `${tAuth("validationMsg.lastNameRequired")}`,
-                  required: true
-                }
-              ]}
-              className="flex-1"
+                label={tAuth("subscriptionForm.name.lastName")}
+                name="lastName"
+                rules={[
+                  {
+                    message: `${tAuth("validationMsg.lastNameRequired")}`,
+                    required: true
+                  }
+                ]}
+                className="flex-1"
             >
               <Input placeholder={tAuth("subscriptionForm.name.placeholder")} />
             </Form.Item>
           </Space.Compact>
           <Form.Item
-            name="jobPosition"
+            name="job_position"
             label="الموقع الوظيفي"
             rules={[{ required: true, message: "هذا الحقل مطلوب" }]}
           >
-            <Select placeholder="اختر الموقع الوظيفي">
-              {jobPositionOptions.map((option) => (
-                <Select.Option key={option.value} value={option.value}>
-                  {option.label}
+            <Select placeholder="اختر الموقع الوظيفي" loading={isDropdownPending}>
+              {dropdownOptions["consultation.job_position"]?.map((option) => (
+                <Select.Option key={option} value={option}>
+                  {option}
                 </Select.Option>
               ))}
             </Select>
@@ -159,7 +193,7 @@ function ConsultingRequest() {
           <h2 className="text-lg font-semibold mt-6 mb-4">تفاصيل المؤسسة</h2>
           <div className="flex gap-4">
             <Form.Item
-              name="organizationName"
+              name="org_name"
               label="اسم المؤسسة"
               rules={[{ required: true, message: "هذا الحقل مطلوب" }]}
               className="flex-1"
@@ -168,48 +202,63 @@ function ConsultingRequest() {
             </Form.Item>
 
             <Form.Item
-              name="establishmentDate"
+              name="establishment_date"
               label="تاريخ التأسيس"
               rules={[{ required: true, message: "هذا الحقل مطلوب" }]}
               className="flex-1"
             >
-              <DatePicker placeholder="اختر تاريخ التأسيس" className="w-full" />
+              <DatePicker placeholder="اختر تاريخ التأسيس" className="w-full"  format={"('YYYY-MM-DD')"}/>
             </Form.Item>
           </div>
+          <Form.Item
+              name="org_type"
+              label="حالة المؤسسة"
+              rules={[{ required: true, message: "هذا الحقل مطلوب" }]}
+              className="flex-1"
+          >
+            <Select placeholder="اختر حالة المؤسسة" loading={isDropdownPending}>
+              {dropdownOptions["consultation.org_type"]?.map((option) => (
+                  <Select.Option key={option} value={option}>
+                    {option}
+                  </Select.Option>
+              ))}
+            </Select>
+          </Form.Item>
           <div className="flex gap-4">
             <Form.Item
-              name="ownershipType"
+              name="org_status"
               label="نوع المؤسسة من حيث الملكية"
               rules={[{ required: true, message: "هذا الحقل مطلوب" }]}
               className="flex-1"
             >
-              <Select placeholder="اختر نوع المؤسسة من حيث الملكية">
-                {ownershipTypeOptions.map((option) => (
-                  <Select.Option key={option.value} value={option.value}>
-                    {option.label}
+              <Select placeholder="اختر نوع المؤسسة من حيث الملكية" loading={isDropdownPending}>
+                {dropdownOptions["consultation.org_status"]?.map((option) => (
+                  <Select.Option key={option} value={option}>
+                    {option}
                   </Select.Option>
                 ))}
               </Select>
             </Form.Item>
             <Form.Item
-              name="wayType"
+              name="means_type"
               label="نوع المؤسسة من حیث الوسیلة"
               rules={[{ required: true, message: "هذا الحقل مطلوب" }]}
               className="flex-1"
             >
-              <Select placeholder="اختر نوع المؤسسة من حیث الوسیلة">
-                {wayTypeOptions.map((option) => (
-                  <Select.Option key={option.value} value={option.value}>
-                    {option.label}
+              <Select placeholder="اختر نوع المؤسسة من حیث الوسیلة" loading={isDropdownPending}>
+                {dropdownOptions["consultation.means_type"]?.map((option) => (
+                  <Select.Option key={option} value={option}>
+                    {option}
                   </Select.Option>
                 ))}
               </Select>
             </Form.Item>
           </div>
+
           {/* Country of Residence */}
           <Form.Item
             label={tAuth("subscriptionForm.country.label")}
-            name="country"
+            name="headquarter_country"
             rules={[
               {
                 required: true,
@@ -217,10 +266,10 @@ function ConsultingRequest() {
               }
             ]}
           >
-            <Select placeholder={tAuth("subscriptionForm.country.placeholder")}>
-              {countryList.map((country) => (
-                <Select.Option key={country.value} value={country.value}>
-                  {country.label}
+            <Select placeholder={tAuth("subscriptionForm.country.placeholder")} loading={isDropdownPending} showSearch={true}>
+              {dropdownOptions["country"]?.map((country) => (
+                <Select.Option key={country} value={country}>
+                  {country}
                 </Select.Option>
               ))}
             </Select>
@@ -228,7 +277,7 @@ function ConsultingRequest() {
           <div className="flex gap-4">
             {/* Number of Employees Field */}
             <Form.Item
-              name="numberOfEmployees"
+              name="employees_number"
               label={tConsultingForm("numberOfEmployees.label")}
               rules={[
                 {
@@ -241,9 +290,9 @@ function ConsultingRequest() {
               <Select
                 placeholder={tConsultingForm("numberOfEmployees.placeholder")}
               >
-                {employeeOptions.map((option) => (
-                  <Select.Option key={option.value} value={option.value}>
-                    {option.label}
+                {dropdownOptions["consultation.employees_number"]?.map((option) => (
+                  <Select.Option key={option} value={option}>
+                    {option}
                   </Select.Option>
                 ))}
               </Select>
@@ -251,7 +300,7 @@ function ConsultingRequest() {
 
             {/* Number of External Offices Field */}
             <Form.Item
-              name="numberOfOffices"
+              name="external_offices_number"
               label={tConsultingForm("numberOfOffices.label")}
               rules={[
                 {
@@ -264,49 +313,48 @@ function ConsultingRequest() {
               <Select
                 placeholder={tConsultingForm("numberOfOffices.placeholder")}
               >
-                {officeOptions.map((option) => (
-                  <Select.Option key={option.value} value={option.value}>
-                    {option.label}
+                {dropdownOptions["consultation.external_offices_number"]?.map((option) => (
+                  <Select.Option key={option} value={option}>
+                    {option}
                   </Select.Option>
                 ))}
               </Select>
             </Form.Item>
           </div>
           <Form.Item
-            name="estimatedBudget"
+            name="annual_budget"
             label="الـموازنـة الـسنویـة الـتقدیـریـة"
             rules={[{ required: true, message: "هذا الحقل مطلوب" }]}
           >
-            <Select placeholder="اختر الـموازنـة الـسنویـة الـتقدیـریـة">
-              {budgetOptions.map((option) => (
-                <Select.Option key={option.value} value={option.value}>
-                  {option.label}
+            <Select placeholder="اختر الـموازنـة الـسنویـة الـتقدیـریـة" loading={isDropdownPending}>
+              {dropdownOptions["consultation.annual_budget"]?.map((option) => (
+                <Select.Option key={option} value={option}>
+                  {option}
                 </Select.Option>
               ))}
             </Select>
           </Form.Item>
           <Form.Item
-            name="institutionChallenges"
+            name="suffers_area"
             label="إذا كانت الاستشارة تطویریة، ما المجالات التي تعاني منھا المؤسسة"
           >
             <Select
               placeholder="اختر المجالات التي تعاني منھا المؤسسة"
-              mode="multiple" // Allows selecting multiple options
             >
-              {institutionChallenges.map((option) => (
-                <Select.Option key={option.value} value={option.value}>
-                  {option.label}
+              {dropdownOptions["consultation.suffers_area"]?.map((option) => (
+                <Select.Option key={option} value={option}>
+                  {option}
                 </Select.Option>
               ))}
             </Select>
           </Form.Item>
 
-          <Form.Item name="additionalInfo" label="معلومات إضافية">
+          <Form.Item name="notes" label="معلومات إضافية">
             <Input.TextArea placeholder="أدخل أي ملاحظات إضافية" />
           </Form.Item>
 
           <div className="flex gap-4">
-            <Button htmlType="submit">ارسال</Button>
+            <Button htmlType="submit" loading={isPending}>ارسال</Button>
             <Button htmlType="reset" onClick={onReset} danger>
               مسح
             </Button>

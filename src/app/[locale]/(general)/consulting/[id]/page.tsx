@@ -1,10 +1,10 @@
 import ConsultingDetails from "@/components/consulting/ConsultingDetails";
 
  function ConsultingDetailsPage({
-  params: { slug }
+  params: { id }
 }: {
-  params: { slug: string };
+  params: { id: string };
 }) {
-  return <ConsultingDetails slug={slug} />;
+  return <ConsultingDetails id={id} />;
 }
 export default ConsultingDetailsPage;

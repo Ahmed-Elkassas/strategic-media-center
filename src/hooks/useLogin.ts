@@ -10,12 +10,15 @@ export const useLogin = ()=> {
     return useMutation({
         mutationFn: ({email, password}: LoginVariables) => login(email, password),
         onSuccess: (data) => {
-            const token = data?.response?.data?.token;
-            const userName = data?.response?.data?.name
-            const email = data?.response?.data?.email
+            const responseData = data?.response?.data;
+            const token = responseData?.token;
+            const userName = responseData?.name
+            const email = responseData?.email
+            const expire = responseData?.expire;
 
-            if(token) {
+            if(token && expire) {
                 localStorage.setItem("token", token);
+                localStorage.setItem('tokenExpiresAt', expire.toString());
                 localStorage.setItem("user", JSON.stringify({userName, email}));
             }
         }

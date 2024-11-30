@@ -7,10 +7,29 @@ import { openOpinionPollsColumns, openOpinionPollsData } from "@/config/tables/o
 import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 import {withAuth} from "@/components/withAuth";
+// import {useState} from "react";
+// import {useGet} from "@/hooks/useGet";
 
 function OpenOpinionPolls() {
     const tBreadcrumb = useTranslations("common.breadcrumb");
     const tPolls = useTranslations("opinionPolls");
+
+    // const [currentPage, setCurrentPage] = useState<number>(1);
+
+    // const { data, error, isPending } = useGet<>({
+    //     endpoint: "/user/v1/opinion_measurements",
+    //     params: { page: currentPage },
+    // })
+    //
+    // const {  data: pollsData  = [], meta } = !error  && data?.response || {};
+    //
+    // // Assign default values
+    // const currentPageNumber = meta?.current_page ?? 1;
+    // const totalRecords = meta?.total ?? 0;
+    //
+    // const handlePageChange = (page: number) => {
+    //     setCurrentPage(page);
+    // };
 
     return (
         <PageWrapper sidebarContent={undefined} sidebarTitle={undefined}>

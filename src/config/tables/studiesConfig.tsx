@@ -1,90 +1,66 @@
 import { Link } from "@/i18n/routing";
-import { Button } from "antd";
+import {Button, message} from "antd";
 
 interface TableRow {
   id: number;
-  studyTitle: string;
-  author: string;
-  pages: number;
-  publishDate: string;
-  download: string;
+  type: string;
+  expert: {
+    name: string;
+  };
+  page_numbers: number;
+  publication_date: string;
+  file: string
 }
 
 export const studiesColumns = [
   {
     title: "العنوان",
-    dataIndex: "studyTitle",
-    key: "studyTitle",
+    dataIndex: "type",
+    key: "type",
     render: (_: unknown, record: TableRow) => (
       <Link
         href={`/studies/list/${record.id}`}
         className="underline underline-offset-4 hover:underline-offset-2"
       >
-        {record.studyTitle}
+        {record.type}
       </Link>
     )
   },
   {
     title: "المؤلف/الباحث",
-    dataIndex: "author",
-    key: "author"
+    dataIndex: "expert",
+    key: "author",
+    render: (expert: { name: string }) => expert?.name || "غير متوفر",
   },
   {
     title: "عدد الصفحات",
-    dataIndex: "pages",
+    dataIndex: "page_numbers",
     key: "pages"
   },
   {
     title: "تاريخ النشر",
-    dataIndex: "publishDate",
+    dataIndex: "publication_date",
     key: "publishDate"
   },
   {
     title: "تنزيل الملخص",
-    dataIndex: "download",
-    key: "download",
+    dataIndex: "file",
+    key: "file",
     render: (_: unknown, record: TableRow) => (
-      <Button
-        type="link"
-        onClick={() => console.log(`Downloading: ${record.studyTitle}`)}
-      >
-        تنزيل
-      </Button>
+        <Button
+            type="link"
+            onClick={() => {
+              if (record?.file) {
+                window.open(record?.file, "_blank");
+              } else {
+                message.error("حدت خطأ")
+              }
+            }}
+        >
+          تنزيل
+        </Button>
     )
   }
 ];
 
-export const studiesData = [
-  {
-    id: 1,
-    studyTitle: "أهمية التخطيط الإستراتيجي للمؤسسات الإعلامية",
-    author: "........",
-    pages: 110,
-    publishDate: "2011",
-    download: "تنزيل"
-  },
-  {
-    id: 2,
-    studyTitle: "إدارة المخاطر في المؤسسات الإعلامية",
-    author: "........",
-    pages: 95,
-    publishDate: "2012",
-    download: "تنزيل"
-  },
-  {
-    id: 3,
-    studyTitle: "تحليل استراتيجيات التسويق الإعلامي",
-    author: "........",
-    pages: 120,
-    publishDate: "2010",
-    download: "تنزيل"
-  },
-  {
-    id: 4,
-    studyTitle: "التخطيط الإعلامي لتحسين الصورة الذهنية",
-    author: "........",
-    pages: 105,
-    publishDate: "2013",
-    download: "تنزيل"
-  }
-];
+

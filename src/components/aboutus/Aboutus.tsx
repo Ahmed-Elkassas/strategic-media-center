@@ -2,19 +2,60 @@
 
 import PageWrapper from "../PageWrapper";
 import { withAuth } from "@/components/withAuth";
+import {useGet} from "@/hooks/useGet";
+import {Spin} from "antd";
+import {notFound} from "next/navigation";
+
+interface About {
+id: number;
+name: string;
+slug: string;
+content: string;
+}
 
 function Aboutus() {
-  return (
+
+    const { data, error, isPending } = useGet<About>({
+        endpoint: "/user/v1/page/about",
+    })
+
+    if (isPending) {
+        return (
+            <PageWrapper sidebarTitle={undefined} sidebarContent={undefined}>
+                <div className="flex justify-center my-4">
+                    <Spin size="large" />
+                </div>
+            </PageWrapper>
+        );
+    }
+
+    // Handle error state
+    if (error) {
+        return (
+            <PageWrapper sidebarTitle={undefined} sidebarContent={undefined}>
+                <div className="flex justify-center my-4">
+                    <p>خطأ: {error.message}</p>
+                </div>
+            </PageWrapper>
+        );
+    }
+
+    // Check if data exists
+    if (!data || !data.response || !data.response.data) {
+        notFound();
+    }
+
+    const item = data.response.data;
+
+
+    return (
     <PageWrapper
       sidebarContent={
-        <ul className="mt-4">
-          <li className="mb-2">أخبار المركز</li>
-          <li className="mb-2">أخبار المركز</li>
-        </ul>
+       undefined
       }
-      sidebarTitle="Subscription Agreement"
+      sidebarTitle={undefined}
     >
-      <p>من نحن</p>
+      <div>{item?.content}</div>
     </PageWrapper>
   );
 }

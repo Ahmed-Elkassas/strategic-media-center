@@ -8,7 +8,7 @@ import {withAuth} from "@/components/withAuth";
   const tStudies = useTranslations("studies");
   const tCommon = useTranslations("common");
 
-  return (
+   return (
     <PageWrapper
       sidebarContent={<h1>ConsultingPage</h1>}
       sidebarTitle={undefined}

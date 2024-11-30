@@ -1,8 +1,8 @@
 import DialogueForumDetails from "@/components/forums/DialogueForumDetails";
 
-export default function DialogueForumDetailsPage() {
+export default function DialogueForumDetailsPage({params: {id}}: {params: {id: string }}) {
 
     return (
-        <DialogueForumDetails />
+        <DialogueForumDetails id={id} />
     );
 }

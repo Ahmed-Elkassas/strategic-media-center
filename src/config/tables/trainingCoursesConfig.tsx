@@ -1,10 +1,15 @@
 import { Link } from "@/i18n/routing";
-import { Button, DatePicker } from "antd";
 
 interface TableRow {
   id: number;
-  courseName: string;
-  duration: string;
+  title: string;
+  specialization: string;
+  duration: number;
+  duration_type: string;
+  price: number;
+  from_date: string;
+  to_date: string;
+  presentation_format: string
 }
 
 // TODO: DON'T Forget to add the name for the fetching APIs
@@ -12,69 +17,47 @@ interface TableRow {
 export const trainingCoursesColumns = [
   {
     title: "اسم الدورة",
-    dataIndex: "courseName",
-    key: "courseName",
+    dataIndex: "title",
+    key: "title",
     render: (_: unknown, record: TableRow) => (
-      <Link href="/training/courses/details" className="underline underline-offset-4 hover:underline-offset-2">
-        {record.courseName}
+      <Link href={`/training/courses/${record.id}`} className="underline underline-offset-4 hover:underline-offset-2">
+        {record.title}
       </Link>
     )
   },
   {
-    title: "المدة",
+    title: "عدد الساعات",
     dataIndex: "duration",
     key: "duration"
   },
   {
-    title: "عدد الساعات",
-    dataIndex: "hours",
-    key: "hours"
+    title: "تاريخ الدورة من",
+    dataIndex: "from_date",
+    key: "from_date",
+    render: (_: unknown, record: TableRow) => {return record?.from_date ? record?.from_date : <p>-----</p>}
   },
   {
-    title: "تاريخ الدورة",
-    dataIndex: "courseDate",
-    key: "courseDate",
-    render: () => <DatePicker placeholder="اختر" style={{ width: "80px" }} />
+    title: "تاريخ الدورة إلي",
+    dataIndex: "to_date",
+    key: "to_date",
+    render: (_: unknown, record: TableRow) => {return record?.to_date ? record?.to_date : <p>-----</p>}
   },
   {
     title: "الرسوم",
-    dataIndex: "fees",
-    key: "fees"
+    dataIndex: "price",
+    key: "price"
   },
   {
     title: "الاشتراك",
     dataIndex: "subscribe",
     key: "subscribe",
     render: (_: unknown, record: TableRow) => (
-      <Button onClick={() => console.log(record.courseName)}>اشترك</Button>
+        <div className="flex gap-1 items-center justify-center">
+          <input
+              type="checkbox"
+              onChange={() => console.log(`Subscribed to: ${record.title}`)}
+          />
+        </div>
     )
   }
-];
-
-export const trainingCoursesData = [
-  {
-    id: 1,
-    courseName: "الإدارة الإستراتيجية",
-    duration: "5 أيام",
-    hours: "20 ساعة",
-    courseDate: "",
-    fees: "$150"
-  },
-  {
-    id: 2,
-    courseName: "التخطيط الإستراتيجي",
-    duration: "3 أيام",
-    hours: "12 ساعة",
-    courseDate: "",
-    fees: "$100"
-  },
-  {
-    id: 3,
-    courseName: "استراتيجيات تخطيط وإدارة الصورة الذهنية",
-    duration: "5 أيام",
-    hours: "25 ساعة",
-    courseDate: "",
-    fees: "$250"
-  }
-  // Add more rows here...
 ];

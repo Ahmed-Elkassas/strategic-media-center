@@ -1,17 +1,72 @@
 "use client";
 
-import {Breadcrumb, Button,} from "antd";
+import {Breadcrumb,  Spin,} from "antd";
 import PageWrapper from "../PageWrapper";
 import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 import {withAuth} from "@/components/withAuth";
+import {useGet} from "@/hooks/useGet";
+import {notFound} from "next/navigation";
 
- function CourseDetails() {
+interface Course {
+    id: number;
+    title: string;
+    specialization: string;
+    duration: number;
+    duration_type: string;
+    price: number;
+    objective: string;
+    main_axes: string;
+    main_skills: string
+    main_knowledge: string
+    related_services: {
+        id: number;
+        title: string;
+    }[];
+    expert?: {
+        id: number;
+         name: string
+    }
+}
+
+ function CourseDetails({ id }: { id: string }) {
     const tBreadcrumb = useTranslations("common.breadcrumb");
     const tCourseDetails = useTranslations("training.courseDetails");
     const tCourses = useTranslations("training.coursesTypes");
 
-    return (
+     const { data, error, isPending } = useGet<Course>({
+         endpoint: `/user/v1/events/${id}`,
+     })
+
+     if (isPending) {
+         return (
+             <PageWrapper sidebarTitle={undefined} sidebarContent={undefined}>
+                 <div className="flex justify-center my-4">
+                     <Spin size="large" />
+                 </div>
+             </PageWrapper>
+         );
+     }
+
+     // Handle error state
+     if (error) {
+         return (
+             <PageWrapper sidebarTitle={undefined} sidebarContent={undefined}>
+                 <div className="flex justify-center my-4">
+                     <p>خطأ: {error.message}</p>
+                 </div>
+             </PageWrapper>
+         );
+     }
+
+     // Check if data exists
+     if (!data || !data.response || !data.response.data) {
+         notFound();
+     }
+
+     const item = data.response.data;
+
+     return (
         <PageWrapper sidebarContent={undefined} sidebarTitle={undefined}>
             <Breadcrumb
                 items={[
@@ -42,13 +97,13 @@ import {withAuth} from "@/components/withAuth";
                         {tCourseDetails("courseTitle")}
                     </h2>
                     <ul className="list-disc ps-6 space-y-2 text-gray-700 *:font-medium">
-                        <li>{tCourseDetails("specialization")}:</li>
-                        <li>{tCourseDetails("goal")}:</li>
-                        <li>{tCourseDetails("mainTitle")}:</li>
-                        <li>{tCourseDetails("subTitles")}:</li>
-                        <li>{tCourseDetails("annualSchedule")}:</li>
-                        <li>{tCourseDetails("trainerName")} <Link href="/training/experts/1" className="underline underline-offset-4 hover:underline-offset-2">عمرو عبدالهادي</Link></li>
-                        <li>{tCourseDetails("relatedServices")}:</li>
+                        <li>{tCourseDetails("specialization")}: {item?.specialization} </li>
+                        <li>{tCourseDetails("goal")}: {item?.objective}</li>
+                        <li>{tCourseDetails("mainTitle")}: {item?.main_axes}</li>
+                        <li>{tCourseDetails("subTitles")}: {item?.main_knowledge}</li>
+                        {/*<li>{tCourseDetails("annualSchedule")}: {item}</li>*/}
+                        <li>{tCourseDetails("trainerName")} <Link href={`/training/experts/${item?.expert?.id}`} className="underline underline-offset-4 hover:underline-offset-2">{item?.expert?.name}</Link></li>
+                        {/*<li>{tCourseDetails("relatedServices")}:</li>*/}
                     </ul>
                 </div>
 
@@ -66,9 +121,9 @@ import {withAuth} from "@/components/withAuth";
                     >
                         {tCourses("subscribeToPrivateCourse")}
                     </Link>
-                    <Button danger type="link" className="text-base font-medium">
-                        {tCourseDetails("cancelSubscription")}
-                    </Button>
+                    {/*<Button danger type="link" className="text-base font-medium">*/}
+                    {/*    {tCourseDetails("cancelSubscription")}*/}
+                    {/*</Button>*/}
                 </div>
             </div>
         </PageWrapper>

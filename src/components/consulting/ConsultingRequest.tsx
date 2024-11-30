@@ -20,7 +20,7 @@ import { withAuth } from "@/components/withAuth";
 import {useCreate} from "@/hooks/useCreate";
 import {useDropdownData} from "@/hooks/useDropDownData";
 import {useEffect, useState} from "react";
-import {dropdownKeys} from "@/lib/constants";
+import {consultingDropdownKeys} from "@/lib/constants";
 
 function ConsultingRequest() {
   const tBreadcrumb = useTranslations("common.breadcrumb.consulting");
@@ -39,7 +39,7 @@ function ConsultingRequest() {
   const [dropdownOptions, setDropdownOptions] = useState<Record<string, string[]>>({});
 
   useEffect(() => {
-    fetchDropdownData({ keys: dropdownKeys }, {
+    fetchDropdownData({ keys: consultingDropdownKeys }, {
       onSuccess: (response) => {
         const dropdownData = response?.data?.response?.data || {};
         setDropdownOptions(dropdownData);

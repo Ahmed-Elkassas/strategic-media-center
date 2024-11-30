@@ -55,24 +55,21 @@ export interface ConsultingRequestFormValues {
 }
 
 export interface PrivateCourseSubscriptionFormValues {
-  type: string; // Type of the event (e.g., course, lecture)
-  shape: string; // Presentation format of the event
-  firstName: string;
-  secondName: string;
-  lastName: string;
+  event_type: string; // Type of the event (e.g., course, lecture)
+  event_presentation: string; // Presentation format of the event
+  name: string;
   email: string;
   phone: string;
-  customEventTitle?: string; // Optional field for custom event titles
-  jobTitle: string;
-  requestEntity: string; // Individual or organization
-  organizationName: string;
-  organizationNature: string; // Media-related or non-media
-  courseTitle: string;
-  eventCountry: string;
-  preferredDate: string; // Use `string` to handle the date as a formatted string
-  additionalInfo?: string; // Optional additional information
-  requestDate: string; // Auto-filled date
-  confirmDataAccuracy: boolean; // Checkbox for data accuracy confirmation
+  custom_event?: string; // Optional field for custom event titles
+  job: string;
+  request_entity: string; // Individual or organization
+  org_name: string;
+  event_title: string;
+  event_country: string;
+  event_date: string; // Use `string` to handle the date as a formatted string
+  notes?: string; // Optional additional information
+  request_date: string;
+  confirm_data_accuracy: boolean; // Checkbox for data accuracy confirmation
 }
 
 export interface UploadMaterialFormValues {

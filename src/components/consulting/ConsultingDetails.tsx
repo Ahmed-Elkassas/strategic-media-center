@@ -49,7 +49,7 @@ interface related_consultation {
          return (
              <PageWrapper sidebarTitle={undefined} sidebarContent={undefined}>
                  <div className="flex justify-center my-4">
-                     <Spin size="large" tip="جاري التحميل..." />
+                     <Spin size="large"  />
                  </div>
              </PageWrapper>
          );
@@ -136,13 +136,13 @@ interface related_consultation {
             <div className=" p-4 rounded-md  mb-4">
               <ul className="list-disc list-inside mb-2 text-gray-700">
                   {item?.related_consultation?.map((related: related_consultation) => (
-                          <li key={related.id}  className="pl-2 hover:text-cyan-700">
-                              <Link href={`/consulting/${related.id}`}>
-                                  <span className="text-blue-600 underline underline-offset-4 hover:underline-offset-2">
-                                    {related.name}
-                                  </span>
-                              </Link>
-                          </li>
+                      <li key={related.id}  className="pl-2 hover:text-cyan-700">
+                          <Link href={`/consulting/${related.id}`}>
+                              <span className="text-blue-600 underline underline-offset-4 hover:underline-offset-2">
+                                {related.name}
+                              </span>
+                          </Link>
+                      </li>
                   ))}
               </ul>
             </div>

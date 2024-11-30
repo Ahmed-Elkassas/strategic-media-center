@@ -1,14 +1,70 @@
 "use client";
 
-import { Breadcrumb } from "antd";
+import {Breadcrumb, Spin} from "antd";
 import PageWrapper from "../PageWrapper";
 import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 import {withAuth} from "@/components/withAuth";
+import {useGet} from "@/hooks/useGet";
+import {notFound} from "next/navigation";
 
- function LectureDetails() {
+interface Lecture {
+    id: number;
+    title: string;
+    specialization: string;
+    duration: number;
+    duration_type: string;
+    price: number;
+    objective: string;
+    main_axes: string;
+    main_skills: string
+    main_knowledge: string
+    related_services: {
+        id: number;
+        title: string;
+    }[];
+    expert?: {
+        id: number;
+        name: string
+    }
+}
+
+ function LectureDetails({ id }: { id: string }) {
     const tBreadcrumb = useTranslations("common.breadcrumb");
     const tLectureDetails = useTranslations("lectures.details");
+
+
+     const { data, error, isPending } = useGet<Lecture>({
+         endpoint: `/user/v1/events/${id}`,
+     })
+
+     if (isPending) {
+         return (
+             <PageWrapper sidebarTitle={undefined} sidebarContent={undefined}>
+                 <div className="flex justify-center my-4">
+                     <Spin size="large" />
+                 </div>
+             </PageWrapper>
+         );
+     }
+
+     // Handle error state
+     if (error) {
+         return (
+             <PageWrapper sidebarTitle={undefined} sidebarContent={undefined}>
+                 <div className="flex justify-center my-4">
+                     <p>خطأ: {error.message}</p>
+                 </div>
+             </PageWrapper>
+         );
+     }
+
+     // Check if data exists
+     if (!data || !data.response || !data.response.data) {
+         notFound();
+     }
+
+     const item = data.response.data;
 
     return (
         <PageWrapper sidebarContent={undefined} sidebarTitle={undefined}>
@@ -37,18 +93,15 @@ import {withAuth} from "@/components/withAuth";
                     {tLectureDetails("lectureDetailsTitle")}
                 </h2>
                 <ul className="list-disc ps-6 space-y-2 text-gray-700 *:font-medium">
-                    <li>{tLectureDetails("lectureTitle")}</li>
-                    <li>{tLectureDetails("specialization")}</li>
-                    <li>{tLectureDetails("goal")}</li>
-                    <li>{tLectureDetails("mainTitle")}</li>
-                    <li>{tLectureDetails("subTitles")}</li>
-                    <li>{tLectureDetails("annualSchedule")}</li>
+                    <li>{tLectureDetails("lectureTitle")}: {item?.title}</li>
+                    <li>{tLectureDetails("specialization")}: {item?.specialization}</li>
+                    <li>الھدف العام المحاضرة: {item?.objective}</li>
 
-                    <li>{tLectureDetails("trainerName")} <Link href="/lectures/experts/1"
-                                                              className="underline underline-offset-4 hover:underline-offset-2">عمرو
-                        عبدالهادي</Link></li>
-                    <li>{tLectureDetails("relatedLectures")}</li>
-                    <li>{tLectureDetails("relatedServices")}</li>
+                    <li>{tLectureDetails("mainTitle")}: {item?.main_axes}</li>
+                    <li>{tLectureDetails("subTitles")}: {item?.main_knowledge}</li>
+                    <li>{tLectureDetails("annualSchedule")}</li>
+                    <li>{tLectureDetails("trainerName")}<Link href={`/lectures/experts/${item?.expert?.id}`} className="underline underline-offset-4 hover:underline-offset-2">{item?.expert?.name}</Link></li>
+
                 </ul>
 
                 {/* Footer Actions */}
@@ -65,12 +118,12 @@ import {withAuth} from "@/components/withAuth";
                     >
                         {tLectureDetails("requestPrivateLecture")}
                     </Link>
-                    <Link
-                        href="/lectures/cancel-subscription"
-                        className="text-red-500 hover:underline"
-                    >
-                        {tLectureDetails("cancelSubscription")}
-                    </Link>
+                    {/*<Link*/}
+                    {/*    href="/lectures/cancel-subscription"*/}
+                    {/*    className="text-red-500 hover:underline"*/}
+                    {/*>*/}
+                    {/*    {tLectureDetails("cancelSubscription")}*/}
+                    {/*</Link>*/}
                 </div>
             </div>
         </PageWrapper>

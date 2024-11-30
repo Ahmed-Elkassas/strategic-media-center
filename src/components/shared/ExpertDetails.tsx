@@ -13,27 +13,25 @@ interface ExpertDetailsProps {
         name: string;
         shortBio?: string;
         currentPosition?: string;
-        previousPositions?: string[];
-        keyWorkExperience?: string[];
-        mainTrainingCourses?: string[];
-        academicQualifications?: string[];
-        researchStudies?: string[];
+        keyWorkExperience?: string;
+        mainTrainingCourses?: string;
+        academicQualifications?: string;
+        researchStudies?: string;
         imageSrc?: string;
     };
 }
 
-export default function ExpertDetails({breadcrumbItems, actions, expertData}: ExpertDetailsProps) {
+export default function ExpertDetails({ breadcrumbItems, actions, expertData}: ExpertDetailsProps) {
     const tExpert = useTranslations("common.expertDetails");
 
     const {
         name,
         shortBio = "",
         currentPosition = "",
-        previousPositions = [],
-        keyWorkExperience = [],
-        mainTrainingCourses = [],
-        academicQualifications = [],
-        researchStudies = [],
+        keyWorkExperience = "",
+        mainTrainingCourses = "",
+        academicQualifications = "",
+        researchStudies = "",
         imageSrc,
     } = expertData;
 
@@ -77,56 +75,29 @@ export default function ExpertDetails({breadcrumbItems, actions, expertData}: Ex
                                     {currentPosition}
                                 </li>
                             )}
-                            {previousPositions?.length > 0 && (
-                                <li>
-                                    <strong>{tExpert("previousPositions")}: </strong>
-                                    <ul className="list-disc ps-6">
-                                        {previousPositions.map((position, index) => (
-                                            <li key={index}>{position}</li>
-                                        ))}
-                                    </ul>
-                                </li>
-                            )}
+
                             {keyWorkExperience?.length > 0 && (
                                 <li>
                                     <strong>{tExpert("keyWorkExperience")}: </strong>
-                                    <ul className="list-disc ps-6">
-                                        {keyWorkExperience?.map((experience, index) => (
-                                            <li key={index}>{experience}</li>
-                                        ))}
-                                    </ul>
+                                    {keyWorkExperience}
                                 </li>
                             )}
                             {mainTrainingCourses?.length > 0 && (
                                 <li>
                                     <strong>{tExpert("mainTrainingCourses")}: </strong>
-                                    <ul className="list-disc ps-6">
-                                        {mainTrainingCourses?.map((course, index) => (
-                                            <li key={index}>{course}</li>
-                                        ))}
-                                    </ul>
+                                    {mainTrainingCourses}
                                 </li>
                             )}
                             {academicQualifications?.length > 0 && (
                                 <li>
                                     <strong>{tExpert("academicQualifications")}: </strong>
-                                    <ul className="list-disc ps-6">
-                                        {expertData.academicQualifications?.map(
-                                            (qualification, index) => (
-                                                <li key={index}>{qualification}</li>
-                                            )
-                                        )}
-                                    </ul>
+                                    {academicQualifications}
                                 </li>
                             )}
                             {researchStudies?.length > 0 ? (
                                 <li>
                                     <strong>{tExpert("researchStudies")}: </strong>
-                                    <ul className="list-disc ps-6">
-                                        {expertData.researchStudies?.map((study, index) => (
-                                            <li key={index}>{study}</li>
-                                        ))}
-                                    </ul>
+                                    {researchStudies}
                                 </li>
                             ) : null}
                         </ul>

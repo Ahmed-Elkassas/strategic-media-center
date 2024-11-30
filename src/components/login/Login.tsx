@@ -9,7 +9,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 import PageWrapper from "@/components/PageWrapper";
 import { useState } from "react";
 import { LoginFormValues } from "@/types/form";
-import {useLogin} from "@/hooks/useLogin";
+import { useLogin } from "@/hooks/useLogin";
 
 const keys = [
   "plan",
@@ -30,7 +30,7 @@ export default function Login() {
   const router = useRouter();
 
   const [recaptchaValue, setRecaptchaValue] = useState<string | null>(null);
-  const {mutate: login, isPending}  = useLogin()
+  const { mutate: login, isPending } = useLogin();
 
   const handleRecaptchaChange = (value: string | null) => {
     setRecaptchaValue(value);
@@ -46,8 +46,9 @@ export default function Login() {
       onSuccess: () => {
         message.success("مرحبا بعودتك!!");
         router.push("/");
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      }, onError: (error: any) => {
+      },
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      onError: (error: any) => {
         const serverMessage = error.response?.data?.response?.message;
         if (serverMessage) {
           message.error(serverMessage);
@@ -55,8 +56,7 @@ export default function Login() {
           message.error("حدث خطأ");
         }
       }
-    })
-
+    });
   };
 
   const sidebarTitle = <h2>{t("sidebarTitle")}</h2>;
@@ -82,35 +82,35 @@ export default function Login() {
       <div className="h-full flex items-end justify-start">
         <div className="">
           <Form
-              className="bg-slate-100 shadow-lg p-3 rounded-md"
-              onFinish={onFinish}
+            className="bg-slate-100 shadow-lg p-3 rounded-md"
+            onFinish={onFinish}
           >
             <Form.Item
-                name="email"
-                label={t("emailLabel")}
-                rules={[{message: t("emailRequired"), required: true}]}
+              name="email"
+              label={t("emailLabel")}
+              rules={[{ message: t("emailRequired"), required: true }]}
             >
-              <Input type="email" placeholder="البريد الألكتروني"/>
+              <Input type="email" placeholder="البريد الألكتروني" />
             </Form.Item>
             <Form.Item
-                name="password"
-                label={t("passwordLabel")}
-                rules={[{message: t("passwordRequired"), required: true}]}
+              name="password"
+              label={t("passwordLabel")}
+              rules={[{ message: t("passwordRequired"), required: true }]}
             >
-              <Input.Password placeholder="كلمة المرور"/>
+              <Input.Password placeholder="كلمة المرور" />
             </Form.Item>
             {/* reCAPTCHA */}
             <Form.Item>
               {recaptchaSiteKey ? (
-                  <ReCAPTCHA
-                      sitekey={recaptchaSiteKey}
-                      onChange={handleRecaptchaChange}
-                  />
+                <ReCAPTCHA
+                  sitekey={recaptchaSiteKey}
+                  onChange={handleRecaptchaChange}
+                />
               ) : (
-                  <p>Error: reCAPTCHA site key is missing</p>
+                <p>Error: reCAPTCHA site key is missing</p>
               )}
             </Form.Item>
-            <div className="mt-3 flex gap-5 items-center justify-center mb-4">
+            {/* <div className="mt-3 flex gap-5 items-center justify-center mb-4">
               <Link
                   href="/forget-password"
                   className="font-medium text-sm text-gray-500  underline underline-offset-4 hover:underline-offset-2"
@@ -123,7 +123,7 @@ export default function Login() {
               >
                 {tAuth("resetPassword.title")}
               </Link>
-            </div>
+            </div> */}
             <Button htmlType="submit" type="primary" loading={isPending}>
               {t("submit")}
             </Button>
@@ -131,14 +131,14 @@ export default function Login() {
 
           <div className="mt-3 flex gap-5 items-center justify-center">
             <Link
-                href="/service-subscription"
-                className="font-medium underline underline-offset-4 hover:underline-offset-2"
+              href="/service-subscription"
+              className="font-medium underline underline-offset-4 hover:underline-offset-2"
             >
               {t("newSubscriber")}
             </Link>
             <Link
-                href="/signup"
-                className="font-medium underline underline-offset-4 hover:underline-offset-2"
+              href="/signup"
+              className="font-medium underline underline-offset-4 hover:underline-offset-2"
             >
               {t("newUser")}
             </Link>

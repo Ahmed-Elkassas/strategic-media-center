@@ -56,12 +56,12 @@ import {withAuth} from "@/components/withAuth";
           >
             {tCourses("subscribeToRemoteCourse")}
           </Link>
-          <Link
-            href="/training/courses/private-course-request"
-            className="underline underline-offset-4 hover:underline-offset-2"
-          >
-            {tCourses("subscribeToPrivateCourse")}
-          </Link>
+          {/*<Link*/}
+          {/*  href="/training/courses/private-course-request"*/}
+          {/*  className="underline underline-offset-4 hover:underline-offset-2"*/}
+          {/*   >*/}
+          {/*  {tCourses("subscribeToPrivateCourse")}*/}
+          {/*</Link>*/}
         </div>
       </section>
     </PageWrapper>

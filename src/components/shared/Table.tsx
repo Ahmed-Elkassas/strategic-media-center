@@ -11,12 +11,16 @@ interface TableProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   columns: any[];
   rowKey?: string;
+  loading?: boolean;
+  pagination?: false | { current: number; total: number; pageSize: number; onChange: (page: number) => void };
 }
 
 export default function ReusableTable({
   dataSource,
   columns,
-  rowKey = "id"
+  rowKey = "id",
+  pagination,
+  loading
 }: TableProps) {
   const locale = useLocale();
 
@@ -28,8 +32,9 @@ export default function ReusableTable({
           dataSource={dataSource}
           columns={columns}
           rowKey={rowKey}
-          pagination={dataSource?.length > 10 ? { pageSize: 10 } : false}
+          pagination={pagination}
           bordered
+          loading={loading}
         />
       </div>
     </ConfigProvider>

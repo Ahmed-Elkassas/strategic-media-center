@@ -1,7 +1,10 @@
+"use client"
+
 import PrivateTypeSubscription from "@/components/shared/PrivateTypeSubscription";
 import {useTranslations} from "next-intl";
+import {withAuth} from "@/components/withAuth";
 
-export default function PrivateLectureRequestPage() {
+ function PrivateLectureRequestPage() {
 
   const tBreadcrumb = useTranslations("common.breadcrumb");
 
@@ -15,6 +18,7 @@ export default function PrivateLectureRequestPage() {
     },
   ];
 
-
-  return <PrivateTypeSubscription breadcrumbItems={breadcrumbItems} />;
+  return <PrivateTypeSubscription breadcrumbItems={breadcrumbItems}  event_id={15}/>;
 }
+
+export default withAuth(PrivateLectureRequestPage)

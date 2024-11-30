@@ -17,5 +17,5 @@ export default function PrivateCourseRequestPage() {
   ];
 
 
-  return <PrivateTypeSubscription breadcrumbItems={breadcrumbItems} />;
+  return <PrivateTypeSubscription breadcrumbItems={breadcrumbItems}  event_id={14} />;
 }

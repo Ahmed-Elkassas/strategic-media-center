@@ -5,20 +5,43 @@ import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 import PageWrapper from "../PageWrapper";
 import {withAuth} from "@/components/withAuth";
-
+import {useState} from "react";
+import {useGet} from "@/hooks/useGet";
+interface News {
+    id: number;
+    field: string;
+    date:  string;
+    title: string;
+    publication_date: string;
+    summary: string;
+    text: string;
+    keywords: string;
+    main_image: string;
+    side_image: string;
+    editor_name: string;
+    editing_date: string;
+    relatedNews: News[];
+}
  function CenterNews() {
   const tNews = useTranslations("news");
 
-  const newsList = [
-    { id: 1, title: "عنوان الخبر ١", link: "/news/details/1" },
-    { id: 2, title: "عنوان الخبر ٢", link: "/news/details/2" },
-    { id: 3, title: "عنوان الخبر ٣", link: "/news/details/3" },
-    { id: 4, title: "عنوان الخبر ٤", link: "/news/details/4" },
-    { id: 5, title: "عنوان الخبر ٥", link: "/news/details/5" },
-    { id: 6, title: "عنوان الخبر ٦", link: "/news/details/6" },
-    { id: 7, title: "عنوان الخبر ٧", link: "/news/details/7" },
-    { id: 8, title: "عنوان الخبر ٨", link: "/news/details/8" }
-  ];
+
+     const [currentPage, setCurrentPage] = useState<number>(1);
+
+     const { data, error, isPending } = useGet<News[]>({
+         endpoint: "/user/v1/news",
+         params: { page: currentPage },
+     })
+
+     const {  data: newsList  = [], meta } = !error  && data?.response || {};
+
+     // Assign default values
+     const currentPageNumber = meta?.current_page ?? 1;
+     const totalRecords = meta?.total ?? 0;
+
+     const handlePageChange = (page: number) => {
+         setCurrentPage(page);
+     };
 
   return (
     <PageWrapper sidebarContent={undefined} sidebarTitle={undefined}>
@@ -66,7 +89,7 @@ import {withAuth} from "@/components/withAuth";
             {newsList.map((news) => (
               <li key={news.id}>
                 <Link
-                  href={news.link}
+                  href={"news/details/"+news.id}
                   className="block bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg shadow-sm text-gray-700 font-medium"
                 >
                   {news.title}
